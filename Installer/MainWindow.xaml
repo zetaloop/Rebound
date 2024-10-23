@@ -21,9 +21,9 @@
             </Grid.ColumnDefinitions>
             <Image Source="/Assets/ReboundHub.ico" Grid.Column="1" Width="64" Height="64" VerticalAlignment="Top" Margin="0, 10"/>
             <StackPanel Grid.Column="3" Spacing="10">
-                <TextBlock Style="{ThemeResource TitleTextBlockStyle}" Text="Install Rebound Hub?"/>
-                <TextBlock Style="{ThemeResource SubtitleTextBlockStyle}" Text="Rebound Hub v0.0.3 ALPHA"/>
-                <TextBlock Text="Installing:&#x0a;- Windows App SDK v1.6-experimental runtime&#x0a;- VCRUNTIME&#x0a;- ReboundHub.msix&#x0a;- ReboundHub.cer." TextWrapping="WrapWholeWords"/>
+                <TextBlock Style="{ThemeResource TitleTextBlockStyle}" Text="安装 Rebound 中心？"/>
+                <TextBlock Style="{ThemeResource SubtitleTextBlockStyle}" Text="Rebound 中心 v0.0.3 ALPHA"/>
+                <TextBlock Text="安装内容：&#x0a;- Windows App SDK v1.6-experimental 运行时库&#x0a;- Visual C++ 运行时库&#x0a;- ReboundHub.msix 软件&#x0a;- ReboundHub.cer 证书" TextWrapping="WrapWholeWords"/>
             </StackPanel>
         </Grid>
         <Border Grid.ColumnSpan="2" Height="75" Background="{ThemeResource SystemControlBackgroundAltMediumLowBrush}" VerticalAlignment="Bottom"/>
@@ -36,7 +36,7 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <ProgressBar Background="Transparent" x:Name="Progress" Grid.Column="0" Grid.ColumnSpan="3" VerticalAlignment="Bottom" Margin="25, 35" Maximum="4" Minimum="0"/>
-            <Button Grid.Column="4" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Content="Install" Margin="0, 20, 20, 20" x:Name="Install" Click="Install_Click"/>
+            <Button Grid.Column="4" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Content="安装" Margin="0, 20, 20, 20" x:Name="Install" Click="Install_Click"/>
         </Grid>
     </Grid>
 </winuiex:WindowEx>

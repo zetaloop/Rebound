@@ -17,7 +17,7 @@ namespace ReboundHubInstaller
             this.InitializeComponent();
             this.SystemBackdrop = new MicaBackdrop();
             this.SetIcon($"{AppContext.BaseDirectory}\\Assets\\ReboundHub.ico");
-            this.Title = $"Install Rebound Hub";
+            this.Title = $"安装 Rebound 中心";
             this.SetWindowSize(475, 335);
             this.CenterOnScreen();
             this.IsMaximizable = false;
