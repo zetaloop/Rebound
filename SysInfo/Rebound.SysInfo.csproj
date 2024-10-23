@@ -19,6 +19,7 @@
     <IncludeSourceRevisionInInformationalVersion>false</IncludeSourceRevisionInInformationalVersion>
     <AccelerateBuildsInVisualStudio>true</AccelerateBuildsInVisualStudio>
     <WindowsSdkPackageVersion>10.0.22621.37-preview</WindowsSdkPackageVersion>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
     <None Include="Assets\**\*">
