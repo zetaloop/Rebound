@@ -131,13 +131,13 @@
 		<WindowsSdkPackageVersion>10.0.22621.37-preview</WindowsSdkPackageVersion>
 		<GenerateAppInstallerFile>True</GenerateAppInstallerFile>
 		<AppxPackageSigningEnabled>True</AppxPackageSigningEnabled>
-		<PackageCertificateThumbprint>08521D58DCDF82C0191052D419A98DCCD6BA27C8</PackageCertificateThumbprint>
+		<PackageCertificateThumbprint>8D63D861AFD2A7379CD15095700274CD29544BC1</PackageCertificateThumbprint>
 		<AppxPackageSigningTimestampDigestAlgorithm>SHA256</AppxPackageSigningTimestampDigestAlgorithm>
 		<AppxAutoIncrementPackageRevision>False</AppxAutoIncrementPackageRevision>
 		<AppxSymbolPackageEnabled>False</AppxSymbolPackageEnabled>
 		<GenerateTestArtifacts>True</GenerateTestArtifacts>
 		<AppxBundle>Never</AppxBundle>
-		<AppInstallerUri>C:\Users\Lenovo\Desktop</AppInstallerUri>
+		<AppInstallerUri>D:\GitHub\Rebound</AppInstallerUri>
 		<HoursBetweenUpdateChecks>0</HoursBetweenUpdateChecks>
 		<AssemblyName>Rebound Hub</AssemblyName>
 		<ApplicationIcon>Assets\AppIcons\Rebound.ico</ApplicationIcon>
