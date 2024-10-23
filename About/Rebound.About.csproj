@@ -11,7 +11,7 @@
 		<PublishProfile>win-$(Platform).pubxml</PublishProfile>
 		<UseWinUI>true</UseWinUI>
 		<EnableMsixTooling>true</EnableMsixTooling>
-		<WindowsSdkPackageVersion>10.0.22621.35-preview</WindowsSdkPackageVersion>
+		<WindowsSdkPackageVersion>10.0.22621.37-preview</WindowsSdkPackageVersion>
 		<GenerateAppInstallerFile>True</GenerateAppInstallerFile>
 		<AppxPackageSigningEnabled>True</AppxPackageSigningEnabled>
 		<PackageCertificateThumbprint>3A171B4CC25BF8365620669A928F4BF543826E6F</PackageCertificateThumbprint>

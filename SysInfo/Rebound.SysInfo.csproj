@@ -18,7 +18,7 @@
     <ApplicationIcon>Assets\icon.ico</ApplicationIcon>
     <IncludeSourceRevisionInInformationalVersion>false</IncludeSourceRevisionInInformationalVersion>
     <AccelerateBuildsInVisualStudio>true</AccelerateBuildsInVisualStudio>
-    <WindowsSdkPackageVersion>10.0.22621.35-preview</WindowsSdkPackageVersion>
+    <WindowsSdkPackageVersion>10.0.22621.37-preview</WindowsSdkPackageVersion>
   </PropertyGroup>
   <ItemGroup>
     <None Include="Assets\**\*">
