@@ -10,11 +10,11 @@ namespace Rebound.WindowModels;
 public static class InstallationWindowModel
 {
     public const string FILES_APP = "49306atecsolution.FilesUWP_et10x9a9vyk8t";
-    public const string DEFRAG = "54d2a63e-e616-4159-bed6-c776b8a816e1_yejd587sfa94t";
-    public const string RUN = "8ab98b2f-6dbe-4358-a752-979d011f968d_yejd587sfa94t";
-    public const string WINVER = "039b9731-7b33-49de-bb09-5b81d5978d1c_yejd587sfa94t";
-    public const string TPM = "0b347e39-1da3-4fc7-80c2-dbf3603118f3_yejd587sfa94t";
-    public const string DISK_CLEANUP = "e8dfd11c-954d-46a2-b700-9cbc6201f056_yejd587sfa94t";
+    public const string DEFRAG = "54d2a63e-e616-4159-bed6-c776b8a816e1_59a6r38835q7a";
+    public const string RUN = "8ab98b2f-6dbe-4358-a752-979d011f968d_59a6r38835q7a";
+    public const string WINVER = "039b9731-7b33-49de-bb09-5b81d5978d1c_59a6r38835q7a";
+    public const string TPM = "0b347e39-1da3-4fc7-80c2-dbf3603118f3_59a6r38835q7a";
+    public const string DISK_CLEANUP = "e8dfd11c-954d-46a2-b700-9cbc6201f056_59a6r38835q7a";
 
     public static void RestartPC()
     {

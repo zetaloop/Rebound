@@ -221,7 +221,7 @@ namespace ReboundHubInstaller
                 Verb = "runas",                 // Run as administrator
                 UseShellExecute = false,
                 CreateNoWindow = true,// Required to redirect output
-                Arguments = @"Start-Process ""shell:AppsFolder\d6ef5e04-e9da-4e22-9782-8031af8beae7_yejd587sfa94t!App""",
+                Arguments = @"Start-Process ""shell:AppsFolder\d6ef5e04-e9da-4e22-9782-8031af8beae7_59a6r38835q7a!App""",
                 RedirectStandardOutput = true,
                 RedirectStandardError = true
             };

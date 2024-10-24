@@ -167,7 +167,7 @@ public sealed partial class Rebound11Page : Page
             UseShellExecute = false,
             CreateNoWindow = true,
             Verb = "runas",
-            Arguments = @$"Start-Process ""shell:AppsFolder\d6ef5e04-e9da-4e22-9782-8031af8beae7_yejd587sfa94t!App"" -ArgumentList ""INSTALLREBOUND11"" -Verb RunAs"
+            Arguments = @$"Start-Process ""shell:AppsFolder\d6ef5e04-e9da-4e22-9782-8031af8beae7_59a6r38835q7a!App"" -ArgumentList ""INSTALLREBOUND11"" -Verb RunAs"
         };
         var process = Process.Start(info);
 
@@ -184,7 +184,7 @@ public sealed partial class Rebound11Page : Page
             UseShellExecute = false,
             CreateNoWindow = true,
             Verb = "runas",
-            Arguments = @$"Start-Process ""shell:AppsFolder\d6ef5e04-e9da-4e22-9782-8031af8beae7_yejd587sfa94t!App"" -ArgumentList ""UNINSTALL"" -Verb RunAs"
+            Arguments = @$"Start-Process ""shell:AppsFolder\d6ef5e04-e9da-4e22-9782-8031af8beae7_59a6r38835q7a!App"" -ArgumentList ""UNINSTALL"" -Verb RunAs"
         };
         var process = Process.Start(info);
 
@@ -213,7 +213,7 @@ public sealed partial class Rebound11Page : Page
             UseShellExecute = false,
             CreateNoWindow = true,
             Verb = "runas",
-            Arguments = @$"Start-Process ""shell:AppsFolder\d6ef5e04-e9da-4e22-9782-8031af8beae7_yejd587sfa94t!App"" -ArgumentList ""UNINSTALLFULL"" -Verb RunAs"
+            Arguments = @$"Start-Process ""shell:AppsFolder\d6ef5e04-e9da-4e22-9782-8031af8beae7_59a6r38835q7a!App"" -ArgumentList ""UNINSTALLFULL"" -Verb RunAs"
         };
         var process = Process.Start(info);
 
