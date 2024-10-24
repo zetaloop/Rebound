@@ -12,8 +12,8 @@
         <Image x:Name="RegionBkg" Stretch="UniformToFill" />
         <ContentDialog
             x:Name="BlockDialog"
-            Title="Unable to open Rebound Hub."
-            CloseButtonText="Close"
-            Content="This content is not available in your region." />
+            Title="无法打开 Rebound 中心。"
+            CloseButtonText="关闭"
+            Content="该内容在您的地区不可用。" />
     </Grid>
 </Window>

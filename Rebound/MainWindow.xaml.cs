@@ -91,7 +91,7 @@ public sealed partial class MainWindow : WindowEx
         this.AppWindow.TitleBar.PreferredHeightOption = Microsoft.UI.Windowing.TitleBarHeightOption.Collapsed;
         this.AppWindow.TitleBar.ButtonHoverBackgroundColor = Windows.UI.Color.FromArgb(25, 200, 200, 200);
         this.AppWindow.TitleBar.ButtonPressedBackgroundColor = Windows.UI.Color.FromArgb(15, 200, 200, 200);
-        this.AppWindow.Title = "Rebound Hub";
+        this.AppWindow.Title = "Rebound 中心";
         this.SetIcon($"{AppContext.BaseDirectory}\\Assets\\AppIcons\\Rebound.ico");
 
         _msgMonitor ??= new WindowMessageMonitor(this);

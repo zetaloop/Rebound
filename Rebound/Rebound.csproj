@@ -143,7 +143,7 @@
 		<ApplicationIcon>Assets\AppIcons\Rebound.ico</ApplicationIcon>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<Authors>Riverside, ErrorTek, Lamparter</Authors>
-		<Title>Rebound Hub</Title>
+		<Title>Rebound 中心</Title>
 		<PackageId>Riverside.Rebound</PackageId>
 		<Copyright>Copyright (c) 2024-present Ivirius Community</Copyright>
 		<PackageTags>rebound, rebound11, windows11, riverside</PackageTags>
@@ -152,6 +152,7 @@
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<DefaultLanguage>zh-CN</DefaultLanguage>
 	</PropertyGroup>
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'">
 	  <Optimize>False</Optimize>
