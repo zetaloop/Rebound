@@ -33,10 +33,10 @@
                             HorizontalAlignment="Left"
                             Source="/Assets/AppIcons/IviriusCommunityIcon.png" />
                         <StackPanel Margin="125,0,0,0">
-                            <TextBlock Style="{ThemeResource TitleLargeTextBlockStyle}" Text="This is Ivirius." />
+                            <TextBlock Style="{ThemeResource TitleLargeTextBlockStyle}" Text="我们是 Ivirius。" />
                             <TextBlock
                                 FontSize="18"
-                                Text="We made apps and tools for you to have the best experience with Windows 11."
+                                Text="我们致力于打造干净利落的软件，给您最棒的 Windows 11 体验。"
                                 TextWrapping="WrapWholeWords" />
                         </StackPanel>
                     </Grid>
@@ -169,12 +169,12 @@
                                     <TextBlock
                                         Margin="0,15,0,0"
                                         FontSize="20"
-                                        Text="Ivirius Text Editor" />
+                                        Text="Ivirius 文本编辑器" />
                                     <TextBlock
                                         Margin="0,5,0,0"
                                         FontSize="11"
                                         Opacity="0.7"
-                                        Text="Fluent WordPad app for Windows 10 and 11.&#x0a;"
+                                        Text="一个更加现代的 Windows 写字板。&#x0a;&#x0a;"
                                         TextWrapping="WrapWholeWords" />
                                     <FontIcon
                                         Margin="0,10,0,0"
@@ -206,12 +206,12 @@
                                     <TextBlock
                                         Margin="0,15,0,0"
                                         FontSize="20"
-                                        Text="Ivirius Text Editor Plus" />
+                                        Text="Ivirius 文本编辑器 Plus" />
                                     <TextBlock
                                         Margin="0,5,0,0"
                                         FontSize="11"
                                         Opacity="0.7"
-                                        Text="Fluent WordPad app with advanced features and beautiful UI.&#x0a;"
+                                        Text="不仅具有漂亮的界面，还增加了丰富的高级功能。&#x0a;"
                                         TextWrapping="WrapWholeWords" />
                                     <FontIcon
                                         Margin="0,10,0,0"
@@ -247,7 +247,7 @@
                                         Margin="0,5,0,0"
                                         FontSize="11"
                                         Opacity="0.7"
-                                        Text="The first WinUI 3 Windows mod that aims to bring consistency to the OS."
+                                        Text="首款基于 WinUI 3 的美化包，让系统界面更加统一和谐。&#x0a;"
                                         TextWrapping="WrapWholeWords" />
                                     <FontIcon
                                         Margin="0,10,0,0"
@@ -278,7 +278,7 @@
                                         Margin="0,5,0,0"
                                         FontSize="11"
                                         Opacity="0.7"
-                                        Text="Add a little bit of light to your Windows build using CrimsonUI.&#x0a;"
+                                        Text="这个美观易用的 UI 组件库将为您的软件注入全新活力。&#x0a;"
                                         TextWrapping="WrapWholeWords" />
                                     <FontIcon
                                         Margin="0,10,0,0"
@@ -313,12 +313,12 @@
                                     <TextBlock
                                         Margin="0,15,0,0"
                                         FontSize="20"
-                                        Text="Docs" />
+                                        Text="文档" />
                                     <TextBlock
                                         Margin="0,5,0,0"
                                         FontSize="11"
                                         Opacity="0.7"
-                                        Text="Learn more about how to use Ivirius apps and contribute to projects.&#x0a;"
+                                        Text="了解如何使用 Ivirius 软件、参与项目贡献。&#x0a;"
                                         TextWrapping="WrapWholeWords" />
                                     <FontIcon
                                         Margin="0,10,0,0"
@@ -363,12 +363,12 @@
                                         <TextBlock
                                             Margin="0,15,0,0"
                                             FontSize="20"
-                                            Text="Discord Server" />
+                                            Text="Discord 聊天群" />
                                         <TextBlock
                                             Margin="0,5,0,0"
                                             FontSize="11"
                                             Opacity="0.7"
-                                            Text="Invite link to our Discord server.&#x0a;&#x0a;"
+                                            Text="点击链接加入我们的 Discord 服务器。&#x0a;&#x0a;"
                                             TextWrapping="WrapWholeWords" />
                                         <FontIcon
                                             Margin="0,10,0,0"
@@ -381,8 +381,8 @@
                                         VerticalAlignment="Bottom"
                                         Orientation="Horizontal"
                                         Spacing="4">
-                                        <HyperlinkButton Content="Dev Sanx" NavigateUri="https://discord.gg/windows-apps-hub-714581497222398064" />
-                                        <HyperlinkButton Content="WCH" NavigateUri="https://discord.gg/windows-customization-hub-966684383178276874" />
+                                        <HyperlinkButton Content="软件开发" NavigateUri="https://discord.gg/windows-apps-hub-714581497222398064" />
+                                        <HyperlinkButton Content="系统美化" NavigateUri="https://discord.gg/windows-customization-hub-966684383178276874" />
                                     </StackPanel>
                                 </Grid>
                                 <interactivity:Interaction.Behaviors>
@@ -397,7 +397,7 @@
                         Margin="10,0"
                         FontSize="26"
                         Style="{ThemeResource SubtitleTextBlockStyle}"
-                        Text="Rebound 11 apps docs" />
+                        Text="Rebound 11 组件文档" />
                 </StackPanel>
                 <ToolkitControls:WrapPanel
                     Margin="50,520,50,25"
@@ -424,10 +424,10 @@
                             <TextBlock
                                 Margin="110,0,0,0"
                                 Style="{ThemeResource SubtitleTextBlockStyle}"
-                                Text="Control Panel" />
+                                Text="控制面板" />
                             <TextBlock
                                 Margin="110,30,0,0"
-                                Text="Manage system settings and configurations"
+                                Text="管理系统设置"
                                 TextWrapping="Wrap" />
                         </Grid>
                         <interactivity:Interaction.Behaviors>
@@ -457,10 +457,10 @@
                             <TextBlock
                                 Margin="110,0,0,0"
                                 Style="{ThemeResource SubtitleTextBlockStyle}"
-                                Text="Defragment and Optimize Drives" />
+                                Text="碎片整理和优化驱动器" />
                             <TextBlock
                                 Margin="110,30,0,0"
-                                Text="Optimize and defragment your drives"
+                                Text="提升电脑硬盘性能"
                                 TextWrapping="Wrap" />
                         </Grid>
                         <interactivity:Interaction.Behaviors>
@@ -490,10 +490,10 @@
                             <TextBlock
                                 Margin="110,0,0,0"
                                 Style="{ThemeResource SubtitleTextBlockStyle}"
-                                Text="Disk Cleanup" />
+                                Text="磁盘清理" />
                             <TextBlock
                                 Margin="110,30,0,0"
-                                Text="Free up space by removing unnecessary files"
+                                Text="清除垃圾文件释放空间"
                                 TextWrapping="Wrap" />
                         </Grid>
                         <interactivity:Interaction.Behaviors>
@@ -524,10 +524,10 @@
                             <TextBlock
                                 Margin="110,0,0,0"
                                 Style="{ThemeResource SubtitleTextBlockStyle}"
-                                Text="Event Viewer" />
+                                Text="事件查看器" />
                             <TextBlock
                                 Margin="110,30,0,0"
-                                Text="View detailed logs of system events"
+                                Text="查看系统活动的详细日志"
                                 TextWrapping="Wrap" />
                         </Grid>
                         <interactivity:Interaction.Behaviors>
@@ -557,10 +557,10 @@
                             <TextBlock
                                 Margin="110,0,0,0"
                                 Style="{ThemeResource SubtitleTextBlockStyle}"
-                                Text="Files" />
+                                Text="文件管理器" />
                             <TextBlock
                                 Margin="110,30,0,0"
-                                Text="Modern file explorer for Windows 11"
+                                Text="更现代的 Win11 文件管理器"
                                 TextWrapping="Wrap" />
                             <Border
                                 Padding="12,5"
@@ -571,7 +571,7 @@
                                 <TextBlock
                                     FontWeight="Bold"
                                     Opacity="0.5"
-                                    Text="3rd Party" />
+                                    Text="第三方软件" />
                             </Border>
                         </Grid>
                         <interactivity:Interaction.Behaviors>
@@ -601,10 +601,10 @@
                             <TextBlock
                                 Margin="110,0,0,0"
                                 Style="{ThemeResource SubtitleTextBlockStyle}"
-                                Text="Ivirius Text Editor" />
+                                Text="Ivirius 文本编辑器" />
                             <TextBlock
                                 Margin="110,30,0,0"
-                                Text="Modern WordPad app for Windows 11"
+                                Text="更现代的 Win11 写字板"
                                 TextWrapping="Wrap" />
                         </Grid>
                         <interactivity:Interaction.Behaviors>
@@ -634,10 +634,10 @@
                             <TextBlock
                                 Margin="110,0,0,0"
                                 Style="{ThemeResource SubtitleTextBlockStyle}"
-                                Text="On-Screen Keyboard" />
+                                Text="屏幕键盘" />
                             <TextBlock
                                 Margin="110,30,0,0"
-                                Text="Access a virtual keyboard on screen"
+                                Text="打开一个虚拟键盘"
                                 TextWrapping="Wrap" />
                         </Grid>
                         <interactivity:Interaction.Behaviors>
@@ -667,10 +667,10 @@
                             <TextBlock
                                 Margin="110,0,0,0"
                                 Style="{ThemeResource SubtitleTextBlockStyle}"
-                                Text="Run" />
+                                Text="运行" />
                             <TextBlock
                                 Margin="110,30,0,0"
-                                Text="Quickly launch programs or commands"
+                                Text="快速启动程序和执行命令"
                                 TextWrapping="Wrap" />
                         </Grid>
                         <interactivity:Interaction.Behaviors>
@@ -701,10 +701,10 @@
                             <TextBlock
                                 Margin="110,0,0,0"
                                 Style="{ThemeResource SubtitleTextBlockStyle}"
-                                Text="Task Scheduler" />
+                                Text="任务计划程序" />
                             <TextBlock
                                 Margin="110,30,0,0"
-                                Text="Automate tasks on your PC"
+                                Text="在电脑上自动执行任务"
                                 TextWrapping="Wrap" />
                         </Grid>
                         <interactivity:Interaction.Behaviors>
@@ -737,7 +737,7 @@
                                 Text="TPM" />
                             <TextBlock
                                 Margin="110,30,0,0"
-                                Text="Manage the Trusted Platform Module"
+                                Text="管理可信平台模块"
                                 TextWrapping="Wrap" />
                         </Grid>
                         <interactivity:Interaction.Behaviors>
@@ -767,10 +767,10 @@
                             <TextBlock
                                 Margin="110,0,0,0"
                                 Style="{ThemeResource SubtitleTextBlockStyle}"
-                                Text="Winver" />
+                                Text="关于 Windows" />
                             <TextBlock
                                 Margin="110,30,0,0"
-                                Text="View details about your Windows version"
+                                Text="显示 Windows 版本详细信息"
                                 TextWrapping="Wrap" />
                         </Grid>
                         <interactivity:Interaction.Behaviors>
