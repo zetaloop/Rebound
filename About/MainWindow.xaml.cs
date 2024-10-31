@@ -21,7 +21,7 @@ namespace Rebound.About
             this.IsMinimizable = false;
             this.MinWidth = 650;
             this.MoveAndResize(25, 25, 650, 690);
-            this.Title = "About Windows";
+            this.Title = "关于 Windows";
             this.IsResizable = false;
             this.SystemBackdrop = new MicaBackdrop();
             this.SetIcon($"{AppContext.BaseDirectory}\\Assets\\Rebound.ico");
@@ -48,20 +48,20 @@ namespace Rebound.About
                     if (key != null)
                     {
                         // Retrieve build number and revision
-                        var versionName = key.GetValue("DisplayVersion", "Unknown") as string;
-                        var buildNumber = key.GetValue("CurrentBuildNumber", "Unknown") as string;
-                        var buildLab = key.GetValue("UBR", "Unknown");
+                        var versionName = key.GetValue("DisplayVersion", "未知") as string;
+                        var buildNumber = key.GetValue("CurrentBuildNumber", "未知") as string;
+                        var buildLab = key.GetValue("UBR", "未知");
 
-                        return $"Version {versionName} (OS Build {buildNumber}.{buildLab})";
+                        return $"版本 {versionName} (OS 内部版本 {buildNumber}.{buildLab})";
                     }
                 }
             }
             catch (Exception ex)
             {
-                return $"Error retrieving OS version details: {ex.Message}";
+                return $"无法获取系统版本号: {ex.Message}";
             }
 
-            return "Registry key not found";
+            return "未找到注册表键";
         }
 
         public string GetLegalInfo()
@@ -81,15 +81,15 @@ namespace Rebound.About
 
                     WindowsVer.Text = caption.ToString().Replace("Microsoft ", "");
 
-                    return $"The {caption.ToString().Replace("Microsoft ", "")} operating system and its user interface are protected by trademark and other pending or existing intellectual property rights in the United States and other countries/regions.";
+                    return $"{caption.ToString().Replace("Microsoft ", "")}操作系统及其用户界面受美国和其他国家/地区的商标法和其他待颁布或已颁布的知识产权法保护。";
                 }
             }
             catch (Exception ex)
             {
-                return $"Error retrieving OS edition details: {ex.Message}";
+                return $"无法获取系统版本类别: {ex.Message}";
             }
 
-            return "WMI query returned no results";
+            return "WMI 查询未返回结果";
         }
 
         public static string GetCurrentUserName()
@@ -102,7 +102,7 @@ namespace Rebound.About
                     if (key != null)
                     {
                         // Retrieve current username
-                        var owner = key.GetValue("RegisteredOwner", "Unknown") as string;
+                        var owner = key.GetValue("RegisteredOwner", "未知") as string;
 
                         return owner;
                     }
@@ -110,10 +110,10 @@ namespace Rebound.About
             }
             catch (Exception ex)
             {
-                return $"Error retrieving OS version details: {ex.Message}";
+                return $"无法获取用户名: {ex.Message}";
             }
 
-            return "Registry key not found";
+            return "未找到注册表键";
         }
 
         private async void Button_Click(object sender, RoutedEventArgs e)
@@ -147,11 +147,11 @@ namespace Rebound.About
 ==========================
 
 {GetDetailedWindowsVersion()}
-� Microsoft Corporation. All rights reserved.
+� Microsoft Corporation。保留所有权利。
 
 {GetLegalInfo()}
 
-This product is licensed under the [Microsoft Software License Terms] (https://support.microsoft.com/en-us/windows/microsoft-software-license-terms-e26eedad-97a2-5250-2670-aad156b654bd) to: {GetCurrentUserName()}
+根据 [Microsoft 软件许可条款] (https://support.microsoft.com/zh-cn/windows/microsoft-software-license-terms-e26eedad-97a2-5250-2670-aad156b654bd)，许可以下用户使用本产品: {GetCurrentUserName()}
 
 ==========================
 --------Rebound 11--------
@@ -159,7 +159,7 @@ This product is licensed under the [Microsoft Software License Terms] (https://s
 
 {ReboundVer.Text}
 
-Rebound 11 is a Windows mod that does not interfere with the system. The current Windows installation contains additional apps to run Rebound 11.";
+Rebound 11 是一款不会干扰系统运行的 Windows 美化模组。此 Windows 系统已安装 Rebound 11 的附带组件。";
             var package = new DataPackage();
             package.SetText(content);
             Clipboard.SetContent(package);

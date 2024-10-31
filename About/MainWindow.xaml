@@ -45,21 +45,21 @@
             <StackPanel Margin="0,0,25,25">
                 <TextBlock
                     x:Name="Version"
-                    Text="Version"
+                    Text="版本"
                     TextWrapping="WrapWholeWords" />
-                <TextBlock Text="© Microsoft Corporation. All rights reserved." />
+                <TextBlock Text="© Microsoft Corporation。保留所有权利。" />
                 <TextBlock Text=" " />
                 <TextBlock
                     x:Name="LegalStuff"
-                    Text="The Windows 11 Pro operating system and its user interface are protected by trademark and other pending or existing intellectual property rights in the United States and other countries/regions."
+                    Text="Windows 11 专业版操作系统及其用户界面受美国和其他国家/地区的商标法和其他待颁布或已颁布的知识产权法保护。"
                     TextWrapping="WrapWholeWords" />
                 <TextBlock Text=" " />
                 <TextBlock>
-                    <Run Text="This product is licensed under the" />
-                    <Hyperlink NavigateUri="https://support.microsoft.com/en-us/windows/microsoft-software-license-terms-e26eedad-97a2-5250-2670-aad156b654bd">
-                        <Run Text="Microsoft Software License Terms" />
+                    <Run Text="根据" />
+                    <Hyperlink NavigateUri="https://support.microsoft.com/zh-cn/windows/microsoft-software-license-terms-e26eedad-97a2-5250-2670-aad156b654bd">
+                        <Run Text="Microsoft 软件许可条款" />
                     </Hyperlink>
-                    <Run Text="to:" />
+                    <Run Text="，许可以下用户使用本产品:" />
                 </TextBlock>
                 <TextBlock x:Name="User" Text="Le" />
             </StackPanel>
@@ -72,10 +72,10 @@
             <StackPanel Margin="0,0,25,25">
                 <TextBlock
                     x:Name="ReboundVer"
-                    Text="Version 0.0.3 ALPHA"
+                    Text="版本 0.0.3 ALPHA"
                     TextWrapping="WrapWholeWords" />
                 <TextBlock Text=" " />
-                <TextBlock Text="Rebound 11 is a Windows mod that does not interfere with the system. The current Windows installation contains additional apps to run Rebound 11." TextWrapping="WrapWholeWords" />
+                <TextBlock Text="Rebound 11 是一款不会干扰系统运行的 Windows 美化模组。此 Windows 系统已安装 Rebound 11 的附带组件。" TextWrapping="WrapWholeWords" />
             </StackPanel>
         </InfoBar>
         <Border
@@ -99,21 +99,21 @@
                 HorizontalAlignment="Stretch"
                 VerticalAlignment="Bottom"
                 Click="Button_Click"
-                Content="Legacy winver" />
+                Content="原版 winver" />
             <Button
                 Grid.Column="4"
                 Margin="0,20,20,20"
                 HorizontalAlignment="Stretch"
                 VerticalAlignment="Bottom"
                 Click="Button_Click_1"
-                Content="Close" />
+                Content="关闭" />
             <Button
                 Grid.Column="0"
                 Margin="20,20,0,20"
                 HorizontalAlignment="Stretch"
                 VerticalAlignment="Bottom"
                 Click="Button_Click_2"
-                Content="Copy">
+                Content="复制">
                 <Button.KeyboardAccelerators>
                     <KeyboardAccelerator
                         Key="C"
