@@ -14,7 +14,7 @@
 		<WindowsSdkPackageVersion>10.0.22621.37-preview</WindowsSdkPackageVersion>
 		<GenerateAppInstallerFile>True</GenerateAppInstallerFile>
 		<AppxPackageSigningEnabled>True</AppxPackageSigningEnabled>
-		<PackageCertificateThumbprint>3A171B4CC25BF8365620669A928F4BF543826E6F</PackageCertificateThumbprint>
+		<PackageCertificateThumbprint>8D63D861AFD2A7379CD15095700274CD29544BC1</PackageCertificateThumbprint>
 		<AppxPackageSigningTimestampDigestAlgorithm>SHA256</AppxPackageSigningTimestampDigestAlgorithm>
 		<AppxAutoIncrementPackageRevision>False</AppxAutoIncrementPackageRevision>
 		<AppxSymbolPackageEnabled>False</AppxSymbolPackageEnabled>
