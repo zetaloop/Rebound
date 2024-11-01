@@ -10,12 +10,12 @@
     mc:Ignorable="d">
 
     <Grid>
-        <TextBlock Margin="20" Text="Select the drive you want to clean up." />
+        <TextBlock Margin="20" Text="选择要清理的驱动器。" />
         <ComboBox
             x:Name="DrivesBox"
             Margin="20,45"
             HorizontalAlignment="Stretch"
-            Header="Drives:" />
+            Header="驱动器：" />
         <Border
             Grid.ColumnSpan="2"
             Height="75"
@@ -33,14 +33,14 @@
                 x:Name="OkButton"
                 HorizontalAlignment="Stretch"
                 Click="Button_Click"
-                Content="OK"
+                Content="确定"
                 Style="{ThemeResource AccentButtonStyle}" />
             <Button
                 x:Name="CancelButton"
                 Grid.Column="2"
                 HorizontalAlignment="Stretch"
                 Click="CancelButton_Click"
-                Content="Exit" />
+                Content="退出" />
         </Grid>
         <ProgressBar
             x:Name="Working"

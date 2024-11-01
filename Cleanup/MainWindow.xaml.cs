@@ -25,7 +25,7 @@ namespace Rebound.Cleanup
             this.IsMinimizable = false;
             this.IsResizable = false;
             this.CenterOnScreen();
-            this.Title = "Disk Cleanup : Drive Selection";
+            this.Title = "磁盘清理：驱动器选择";
             this.SystemBackdrop = new MicaBackdrop();
             this.SetIcon($@"{AppContext.BaseDirectory}\Assets\cleanmgr.ico");
             var x = Directory.GetLogicalDrives();
@@ -62,7 +62,7 @@ namespace Rebound.Cleanup
 
         public Task OpenWindow(string disk)
         {
-            this.Title = "Disk Cleanup : Calculating total cache size... (This may take a while)";
+            this.Title = "磁盘清理：正在扫描可清理的文件...（要点时间）";
             var win = new DiskWindow(disk);
             win.AppWindow.DefaultTitleBarShouldMatchAppModeTheme = true;
             win.SetWindowSize(450, 640);
@@ -70,7 +70,7 @@ namespace Rebound.Cleanup
             win.IsMinimizable = false;
             win.IsResizable = false;
             win.Move(50, 50);
-            win.Title = $"Disk Cleanup for ({disk})";
+            win.Title = $"磁盘清理 ({disk})";
             win.SystemBackdrop = new MicaBackdrop();
             win.SetIcon($@"{AppContext.BaseDirectory}\Assets\cleanmgr.ico");
             win.Show();

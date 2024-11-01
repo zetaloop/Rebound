@@ -15,10 +15,10 @@
             Orientation="Horizontal"
             Spacing="4">
             <MenuBar Margin="5">
-                <MenuBarItem x:Name="MoreOptions" Title="More Options">
-                    <MenuFlyoutItem Click="MenuFlyoutItem_Click" Text="Defragment and Optimize Drives" />
-                    <MenuFlyoutItem Click="MenuFlyoutItem_Click_1" Text="Legacy Disk Cleanup" />
-                    <MenuFlyoutItem Click="MenuFlyoutItem_Click_2" Text="Uninstall apps" />
+                <MenuBarItem x:Name="MoreOptions" Title="更多选项">
+                    <MenuFlyoutItem Click="MenuFlyoutItem_Click" Text="碎片整理和优化驱动器" />
+                    <MenuFlyoutItem Click="MenuFlyoutItem_Click_1" Text="原版磁盘清理工具" />
+                    <MenuFlyoutItem Click="MenuFlyoutItem_Click_2" Text="卸载软件" />
                 </MenuBarItem>
             </MenuBar>
             <Button
@@ -26,18 +26,18 @@
                 Background="Transparent"
                 BorderThickness="0"
                 Click="Button_Click"
-                Content="Clean up system files" />
+                Content="清理系统文件" />
             <Button
                 x:Name="ViewFiles"
                 Background="Transparent"
                 BorderThickness="0"
                 Click="ViewFiles_Click"
-                Content="View Files" />
+                Content="查看文件" />
         </StackPanel>
         <Grid Margin="0,40,0,0">
             <InfoBar
                 x:Name="Title"
-                Title="You can use Disk Cleanup to free up to (AMOUNT) of disk space on (C:)."
+                Title="可以释放 (C:) 上 (某些大小) 的磁盘空间。"
                 Margin="15,10"
                 VerticalAlignment="Top"
                 IsClosable="False"
@@ -48,7 +48,7 @@
                 VerticalAlignment="Top"
                 Checked="CheckBox_Checked"
                 Click="CheckBox_Click"
-                Content="Select all"
+                Content="全选"
                 IsChecked="{x:Null}"
                 Unchecked="CheckBox_Unchecked" />
             <ListView
@@ -85,7 +85,7 @@
                 </ListView.ItemTemplate>
             </ListView>
             <InfoBar
-                Title="Description"
+                Title="描述"
                 Margin="15,320,15,85"
                 VerticalContentAlignment="Stretch"
                 IsClosable="False"
@@ -95,7 +95,7 @@
                         x:Name="ItemDetails"
                         Margin="0,0,20,0"
                         HorizontalTextAlignment="Justify"
-                        Text="Details about the item."
+                        Text="此项的详细说明。"
                         TextWrapping="WrapWholeWords" />
                 </ScrollViewer>
             </InfoBar>
@@ -116,14 +116,14 @@
                     x:Name="CleanButton"
                     HorizontalAlignment="Stretch"
                     Click="Button_Click_1"
-                    Content="Clean"
+                    Content="清理"
                     Style="{ThemeResource AccentButtonStyle}" />
                 <Button
                     x:Name="CancelButton"
                     Grid.Column="2"
                     HorizontalAlignment="Stretch"
                     Click="Button_Click_2"
-                    Content="Cancel" />
+                    Content="取消" />
             </Grid>
         </Grid>
         <ProgressBar

@@ -15,7 +15,6 @@
        <WindowsSdkPackageVersion>10.0.22621.37-preview</WindowsSdkPackageVersion>
        <GenerateAppInstallerFile>True</GenerateAppInstallerFile>
        <AppxPackageSigningEnabled>True</AppxPackageSigningEnabled>
-       <PackageCertificateKeyFile>Rebound.Cleanup_TemporaryKey.pfx</PackageCertificateKeyFile>
        <AppxPackageSigningTimestampDigestAlgorithm>SHA256</AppxPackageSigningTimestampDigestAlgorithm>
        <AppxAutoIncrementPackageRevision>False</AppxAutoIncrementPackageRevision>
        <AppxSymbolPackageEnabled>False</AppxSymbolPackageEnabled>
@@ -103,5 +102,6 @@
     <Version>0.0.3</Version>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageCertificateThumbprint>8D63D861AFD2A7379CD15095700274CD29544BC1</PackageCertificateThumbprint>
   </PropertyGroup>
 </Project>

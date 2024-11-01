@@ -309,15 +309,15 @@ namespace Rebound.Cleanup
             }
             catch (UnauthorizedAccessException)
             {
-                return "Access Denied";
+                return "无权访问";
             }
             catch (IOException ex)
             {
-                return "IO Error";
+                return "读写错误";
             }
             catch (Exception ex)
             {
-                return "Unknown Error";
+                return "未知错误";
             }
 
             // Format the size into appropriate units
@@ -442,15 +442,15 @@ namespace Rebound.Cleanup
             }
             catch (UnauthorizedAccessException)
             {
-                return "Access Denied";
+                return "无权访问";
             }
             catch (IOException ex)
             {
-                return "IO Error";
+                return "读写错误";
             }
             catch (Exception ex)
             {
-                return "Unknown Error";
+                return "未知错误";
             }
 
             // Format the size into appropriate units
@@ -544,12 +544,12 @@ namespace Rebound.Cleanup
             {
                 items.Add(new CleanItem
                 {
-                    Name = $"Temporary Internet Files",
+                    Name = $"Internet 临时文件",
                     ItemPath = $@"{Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData)}\Microsoft\Windows\INetCache",
                     ImagePath = "ms-appx:///Assets/imageres_59.ico",
                     Size = GetFolderLongSize($@"{Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData)}\Microsoft\Windows\INetCache"),
                     DisplaySize = GetFolderSize($@"{Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData)}\Microsoft\Windows\INetCache"),
-                    Description = "These files are cached copies of web pages, images, and other online media from websites you've visited. They help speed up loading times when you revisit those sites. Deleting these files will free up space but might slow down page loading temporarily until the cache is rebuilt.",
+                    Description = "这些文件是浏览网页时自动缓存的页面、图片等，能让网页加载更快。删除这些文件可以释放空间，但网页首次加载可能比较慢，重新缓存完就快了。",
                     IsChecked = false,
                 });
             }
@@ -557,12 +557,12 @@ namespace Rebound.Cleanup
             {
                 items.Add(new CleanItem
                 {
-                    Name = $"Downloaded Program Files",
+                    Name = $"已下载的程序文件",
                     ItemPath = @"C:\Windows\Downloaded Program Files",
                     ImagePath = "ms-appx:///Assets/imageres_3.ico",
                     Size = GetFolderLongSize(@"C:\Windows\Downloaded Program Files"),
                     DisplaySize = GetFolderSize(@"C:\Windows\Downloaded Program Files"),
-                    Description = "This category includes ActiveX controls and Java applets that were automatically downloaded from the Internet when you view certain web pages. These files are temporarily stored on your computer to speed up the loading of the pages when you revisit them. They can be safely deleted if not needed.",
+                    Description = "这些文件是浏览网页时自动下载的 ActiveX 控件和 Java 小程序，能让网页加载更快。如果用不到了可以删除。",
                     IsChecked = true,
                 });
             }
@@ -570,35 +570,35 @@ namespace Rebound.Cleanup
             {
                 items.Add(new CleanItem
                 {
-                    Name = $"Rebound 11 temporary files",
+                    Name = $"Rebound 11 临时文件",
                     ItemPath = @"C:\Rebound11\Temp",
                     ImagePath = "ms-appx:///Assets/r11imageres_101.ico",
                     Size = GetFolderLongSize(@"C:\Rebound11\Temp"),
                     DisplaySize = GetFolderSize(@"C:\Rebound11\Temp"),
-                    Description = "Rebound 11 might sometimes copy packages and other files to a special temp folder in order for PowerShell to read the paths easier when installing.",
+                    Description = "安装 Rebound 11 时，可能会将安装包和相关文件复制到这个临时文件夹中，方便调用 PowerShell 读取路径。安装完成之后可以删除。",
                     IsChecked = true,
                 });
             }
             items.Add(new CleanItem
             {
-                Name = $"Recycle Bin",
+                Name = $"回收站",
                 ItemPath = $@"{disk}\$Recycle.Bin",
                 ImagePath = "ms-appx:///Assets/imageres_54.ico",
                 Size = GetFolderLongSize($@"{disk}\$Recycle.Bin"),
                 DisplaySize = GetFolderSize($@"{disk}\$Recycle.Bin"),
-                Description = "The Recycle Bin stores files and folders that you�ve deleted from your computer. These items are not permanently removed until you empty the Recycle Bin. You can recover deleted items from here, but deleting them permanently frees up disk space.",
+                Description = "回收站里存放着你删除的文件，这些删掉的文件可以还原。清空回收站释放空间后，将会永久删除这些文件。",
                 IsChecked = true,
             });
             if (disk == "C:")
             {
                 items.Add(new CleanItem
                 {
-                    Name = $"Temporary Files",
+                    Name = $"临时文件",
                     ItemPath = $@"{Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData)}\Temp",
                     ImagePath = "ms-appx:///Assets/imageres_2.ico",
                     Size = GetFolderLongSize($@"{Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData)}\Temp"),
                     DisplaySize = GetFolderSize($@"{Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData)}\Temp"),
-                    Description = "These are files created by the operating system and applications inside the AppData folder for temporary use. They are often created during the installation of software or while programs are running. These files can usually be safely deleted once the system or application is done with them.",
+                    Description = "这些文件是系统和软件在安装、运行的时候，在 AppData 文件夹中临时创建的文件。系统或软件使用完成后，通常可以安全删除。",
                     IsChecked = false,
                 });
             }
@@ -606,12 +606,12 @@ namespace Rebound.Cleanup
             {
                 items.Add(new CleanItem
                 {
-                    Name = $"Thumbnails",
+                    Name = $"缩略图",
                     ItemPath = $@"{Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData)}\Microsoft\Windows\Explorer",
                     ImagePath = "ms-appx:///Assets/imageres_2.ico",
                     Size = GetFolderLongSizeDB($@"{Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData)}\Microsoft\Windows\Explorer"),
                     DisplaySize = GetFolderSizeDB($@"{Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData)}\Microsoft\Windows\Explorer"),
-                    Description = "Thumbnails are small images used to preview the content of files, such as pictures and videos, within folders. The system caches these images to display them quickly. Deleting thumbnail caches will free up space but will cause the system to regenerate them when needed.",
+                    Description = "缩略图是图片、视频等文件的图标上显示的预览小图片。删除缩略图缓存可以释放空间，系统会在下次查看文件时重新生成缩略图。",
                     IsChecked = false,
                 });
             }
@@ -619,12 +619,12 @@ namespace Rebound.Cleanup
             {
                 items.Add(new CleanItem
                 {
-                    Name = $"System Created Windows Error Reporting",
+                    Name = $"系统创建的 Windows 错误报告",
                     ItemPath = $@"C:\ProgramData\Microsoft\Windows\WER",
                     ImagePath = "ms-appx:///Assets/EventViewer.png",
                     Size = GetFolderLongSize($@"C:\ProgramData\Microsoft\Windows\WER"),
                     DisplaySize = GetFolderSize($@"C:\ProgramData\Microsoft\Windows\WER"),
-                    Description = "These are files generated when your system encounters an error. They contain data that can be used to troubleshoot and diagnose issues with your system. If the reports have been sent to Microsoft or are no longer needed, they can be deleted to free up space.",
+                    Description = "当系统遇到错误时，会生成这些用于排查问题的数据报告。如果已经发送报告或者用不到了，可以删除它们来释放空间。",
                     IsChecked = false,
                 });
             }
@@ -632,12 +632,12 @@ namespace Rebound.Cleanup
             {
                 items.Add(new CleanItem
                 {
-                    Name = $"Downloads Folder (Current User)",
+                    Name = $"下载文件夹（当前用户）",
                     ItemPath = $@"{KnownFolders.GetPath(KnownFolder.Downloads)}",
                     ImagePath = "ms-appx:///Assets/imageres_184.ico",
                     Size = GetFolderLongSize($@"{KnownFolders.GetPath(KnownFolder.Downloads)}"),
                     DisplaySize = GetFolderSize($@"{KnownFolders.GetPath(KnownFolder.Downloads)}"),
-                    Description = "The current user's downloads folder. When you download a file from the web, it will usually be placed here.",
+                    Description = "这是你的 “下载” 文件夹，网上下载的文件通常会存放在这里。这些文件如果用不到了，可以删掉。",
                     IsChecked = true,
                 });
             }
@@ -645,12 +645,12 @@ namespace Rebound.Cleanup
             {
                 items.Add(new CleanItem
                 {
-                    Name = $"System Cache Files",
+                    Name = $"系统缓存文件",
                     ItemPath = $@"C:\Windows\Prefetch\",
                     ImagePath = "ms-appx:///Assets/imageres_2.ico",
                     Size = GetFolderLongSize($@"C:\Windows\Prefetch\"),
                     DisplaySize = GetFolderSize($@"C:\Windows\Prefetch\"),
-                    Description = "These include various files used by the system to speed up operations. Examples include prefetch files that help applications start faster and font cache files that speed up font rendering. Deleting these files can reclaim space but might temporarily slow down some operations.",
+                    Description = "这些文件让系统运行更快，包括加速软件启动的预取文件、加速字体显示的字体缓存文件等。删除缓存可以释放空间，但一些操作可能暂时会变慢。",
                     IsChecked = false,
                 });
             }
@@ -658,12 +658,12 @@ namespace Rebound.Cleanup
             {
                 items.Add(new CleanItem
                 {
-                    Name = $"Windows Update Cache Files",
+                    Name = $"Windows 更新缓存文件",
                     ItemPath = $@"C:\Windows\SoftwareDistribution",
                     ImagePath = "ms-appx:///Assets/imageres_2.ico",
                     Size = GetFolderLongSize($@"C:\Windows\SoftwareDistribution"),
                     DisplaySize = GetFolderSize($@"C:\Windows\SoftwareDistribution"),
-                    Description = "Disk Cleanup can remove files that are no longer needed after installing Windows updates. These include old versions of files that have been updated, which can sometimes take up significant disk space. Deleting these files will make it harder to uninstall updates.",
+                    Description = "这些是 Windows 安装更新之后留下的无用文件，包括更新安装包、旧版本文件等。这些文件可能占用大量空间，但删除后可能会让一些更新无法卸载。",
                     IsChecked = true,
                 });
             }
@@ -671,12 +671,12 @@ namespace Rebound.Cleanup
             {
                 items.Add(new CleanItem
                 {
-                    Name = $"Previous Windows Installations",
+                    Name = $"旧版本 Windows 系统",
                     ItemPath = $@"C:\Windows.old",
                     ImagePath = "ms-appx:///Assets/imageres_2.ico",
                     Size = GetFolderLongSize($@"C:\Windows.old"),
                     DisplaySize = GetFolderSize($@"C:\Windows.old"),
-                    Description = "If you�ve recently upgraded to a newer version of Windows, files from the previous installation are kept in the Windows.old folder in case you need to revert to the earlier version. Deleting these files will permanently remove the ability to roll back to the previous version.",
+                    Description = "升级新版本 Windows 后，旧版本文件会保留在 Windows.old 文件夹中。删除这些文件将无法还原旧版本。",
                     IsChecked = false,
                 });
             }
@@ -684,12 +684,12 @@ namespace Rebound.Cleanup
             {
                 items.Add(new CleanItem
                 {
-                    Name = $"System Error Memory Dump Files",
+                    Name = $"系统错误内存转储文件",
                     ItemPath = $@"C:\Windows\MEMORY.DMP",
                     ImagePath = "ms-appx:///Assets/EventViewer.png",
                     Size = GetFolderLongSize($@"C:\Windows\MEMORY.DMP"),
                     DisplaySize = GetFolderSize($@"C:\Windows\MEMORY.DMP"),
-                    Description = "These files are created when Windows crashes and contain a copy of the memory at the time of the crash. They can be used to diagnose the cause of the crash. Large memory dumps can take up significant space and can be safely deleted if no longer needed.",
+                    Description = "这些文件记录了系统崩溃时的内存状态，用于排查问题。完整的转储文件会占用较多空间，如果用不到了可以删除。",
                     IsChecked = false,
                 });
             }
@@ -697,12 +697,12 @@ namespace Rebound.Cleanup
             {
                 items.Add(new CleanItem
                 {
-                    Name = $"System Error Minidump Files",
+                    Name = $"系统错误小型转储文件",
                     ItemPath = $@"C:\Windows\Minidump",
                     ImagePath = "ms-appx:///Assets/EventViewer.png",
                     Size = GetFolderLongSize($@"C:\Windows\Minidump"),
                     DisplaySize = GetFolderSize($@"C:\Windows\Minidump"),
-                    Description = "Minidumps are smaller versions of memory dump files created when the system crashes. They contain essential information to diagnose the cause of the crash but are smaller in size than full memory dumps. These can be deleted if you no longer need to troubleshoot a crash.",
+                    Description = "小型转储文件（Minidumps）与完整内存转储相比更加精简，也用于排查问题。如果用不到了也可删除。",
                     IsChecked = false,
                 });
             }
@@ -710,12 +710,12 @@ namespace Rebound.Cleanup
             {
                 items.Add(new CleanItem
                 {
-                    Name = $"Temporary Windows Installation Files",
+                    Name = $"临时 Windows 安装文件",
                     ItemPath = $@"C:\Windows\Temp",
                     ImagePath = "ms-appx:///Assets/imageres_2.ico",
                     Size = GetFolderLongSize($@"C:\Windows\Temp"),
                     DisplaySize = GetFolderSize($@"C:\Windows\Temp"),
-                    Description = "These files are created during the installation or updating of Windows. They help ensure the installation process runs smoothly and are typically deleted once the process is complete. Deleting them frees up space without affecting system stability.\r\n",
+                    Description = "这些文件是 Windows 安装和更新过程中生成的，安装完成后通常会自动删除。手动清理也不会影响系统稳定性。",
                     IsChecked = false,
                 });
             }
@@ -723,12 +723,12 @@ namespace Rebound.Cleanup
             {
                 items.Add(new CleanItem
                 {
-                    Name = $"Device Driver Packages",
+                    Name = $"设备驱动程序包",
                     ItemPath = @"C:\Windows\System32\DriverStore\FileRepository",
                     ImagePath = "ms-appx:///Assets/DDORes_2001.ico",
                     Size = GetFolderLongSizeDrivers(@"C:\Windows\System32\DriverStore\FileRepository"),
                     DisplaySize = GetFolderSizeDrivers(@"C:\Windows\System32\DriverStore\FileRepository"),
-                    Description = "These are files related to hardware drivers installed on your system. They are used by Windows to manage hardware devices and ensure proper functionality. Over time, old or unused driver packages may accumulate and take up disk space. Cleaning up these packages can help free up storage and keep your system organized. Only outdated or redundant packages will be removed, while active drivers will remain unaffected.",
+                    Description = "驱动程序用于控制和管理硬件。随着版本更新，旧的驱动会积累起来，清理旧的或没用的驱动可以释放空间，不会影响设备运行。",
                     IsChecked = false,
                 });
             }
@@ -744,7 +744,7 @@ namespace Rebound.Cleanup
             items.Sort((x, y) => string.Compare(x.Name, y.Name, StringComparison.Ordinal));
             CleanItems.ItemsSource = items;
 
-            Title.Title = $"You can use Disk Cleanup to free up to {FormatSize(size)} of disk space on ({disk}).";
+            Title.Title = $"可以释放 ({disk}) 上 {FormatSize(size)} 的磁盘空间。";
 
             CleanItems.SelectedIndex = 0;
 
@@ -771,17 +771,17 @@ namespace Rebound.Cleanup
             MoreOptions.IsEnabled = false;
             ViewFiles.IsEnabled = false;
             Working.IsIndeterminate = true;
-            (this as WindowEx).Title = $"Disk Cleanup : Cleaning drive ({Disk})... (This may take a while)";
+            (this as WindowEx).Title = $"磁盘清理：正在清理 ({Disk})...（要点时间）";
 
             await Task.Delay(100);
 
             foreach (var item in items)
             {
-                if (item.Name == "Thumbnails")
+                if (item.Name == "缩略图")
                 {
                     DeleteFilesDB(item.ItemPath);
                 }
-                else if (item.Name == "Device Driver Packages")
+                else if (item.Name == "设备驱动程序包")
                 {
                     CleanupDriverStore();
                 }
@@ -903,7 +903,7 @@ namespace Rebound.Cleanup
                     }
                     catch (Exception ex)
                     {
-                        await this.ShowMessageDialogAsync($"The system cannot find the file specified or the command line arguments are invalid.", "Error");
+                        await this.ShowMessageDialogAsync($"系统找不到指定的文件或命令行参数无效。", "错误");
                     }
                 }
             }
@@ -912,9 +912,9 @@ namespace Rebound.Cleanup
                 Debug.WriteLine($"Exception: {ex.Message}");
                 ContentDialog noWifiDialog = new ContentDialog
                 {
-                    Title = "Error",
-                    Content = $"Could not launch Disk Defragmenter: {ex.Message}",
-                    CloseButtonText = "Ok"
+                    Title = "错误",
+                    Content = $"无法启动磁盘碎片整理工具: {ex.Message}",
+                    CloseButtonText = "确定"
                 };
 
                 await noWifiDialog.ShowAsync(); // Showing the error dialog
@@ -941,7 +941,7 @@ namespace Rebound.Cleanup
             }
             catch (Exception ex)
             {
-                await this.ShowMessageDialogAsync($"The system cannot find the file specified or the command line arguments are invalid.", "Error");
+                await this.ShowMessageDialogAsync($"系统找不到指定的文件或命令行参数无效。", "错误");
             }
         }
 
@@ -1004,7 +1004,7 @@ namespace Rebound.Cleanup
                 UseShellExecute = false,
                 CreateNoWindow = true,
                 Verb = "runas",
-                Arguments = @$"Start-Process ""shell:AppsFolder\e8dfd11c-954d-46a2-b700-9cbc6201f056_pthpn8nb9xcaa!App"" -ArgumentList ""{Disk}"" -Verb RunAs"
+                Arguments = @$"Start-Process ""shell:AppsFolder\e8dfd11c-954d-46a2-b700-9cbc6201f056_59a6r38835q7a!App"" -ArgumentList ""{Disk}"" -Verb RunAs"
             });
             Close();
         }
@@ -1018,7 +1018,7 @@ namespace Rebound.Cleanup
             MoreOptions.IsEnabled = false;
             ViewFiles.IsEnabled = false;
             Working.IsIndeterminate = true;
-            (this as WindowEx).Title = $"Disk Cleanup : Cleaning drive ({Disk})... (This may take a while)";
+            (this as WindowEx).Title = $"磁盘清理：正在清理 ({Disk})...（要点时间）";
 
             await Task.Delay(100);
 
@@ -1026,11 +1026,11 @@ namespace Rebound.Cleanup
             {
                 if (item.IsChecked == true)
                 {
-                    if (item.Name == "Thumbnails")
+                    if (item.Name == "缩略图")
                     {
                         DeleteFilesDB(item.ItemPath);
                     }
-                    else if (item.Name == "Device Driver Packages")
+                    else if (item.Name == "设备驱动程序包")
                     {
                         CleanupDriverStore();
                     }
