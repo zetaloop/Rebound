@@ -59,7 +59,7 @@
                     <Hyperlink NavigateUri="https://support.microsoft.com/zh-cn/windows/microsoft-software-license-terms-e26eedad-97a2-5250-2670-aad156b654bd">
                         <Run Text="Microsoft 软件许可条款" />
                     </Hyperlink>
-                    <Run Text="，许可以下用户使用本产品:" />
+                    <Run Text="，许可如下用户使用本产品:" />
                 </TextBlock>
                 <TextBlock x:Name="User" Text="Le" />
             </StackPanel>

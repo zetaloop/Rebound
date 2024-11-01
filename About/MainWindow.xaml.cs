@@ -151,7 +151,7 @@ namespace Rebound.About
 
 {GetLegalInfo()}
 
-根据 [Microsoft 软件许可条款] (https://support.microsoft.com/zh-cn/windows/microsoft-software-license-terms-e26eedad-97a2-5250-2670-aad156b654bd)，许可以下用户使用本产品: {GetCurrentUserName()}
+根据 [Microsoft 软件许可条款] (https://support.microsoft.com/zh-cn/windows/microsoft-software-license-terms-e26eedad-97a2-5250-2670-aad156b654bd)，许可如下用户使用本产品: {GetCurrentUserName()}
 
 ==========================
 --------Rebound 11--------
