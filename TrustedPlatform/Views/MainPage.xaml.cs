@@ -38,8 +38,8 @@ public sealed partial class MainPage : Page
         Status.Text = ViewModelTpm.Status;
 
         // Status bar logic
-        StatusBar.Severity = ViewModelTpm.Status == "Ready" ? InfoBarSeverity.Success : InfoBarSeverity.Error;
-        StatusBar.Title = $"Status: {ViewModelTpm.Status}";
+        StatusBar.Severity = ViewModelTpm.Status == "已就绪" ? InfoBarSeverity.Success : InfoBarSeverity.Error;
+        StatusBar.Title = $"状态：{ViewModelTpm.Status}";
     }
 
     ContentDialog dial;
@@ -49,11 +49,11 @@ public sealed partial class MainPage : Page
         var dialog = new ContentDialog()
         {
             XamlRoot = this.XamlRoot,
-            PrimaryButtonText = "Reset",
-            SecondaryButtonText = "Cancel",
+            PrimaryButtonText = "重置",
+            SecondaryButtonText = "取消",
             DefaultButton = ContentDialogButton.Primary,
-            Title = "TPM Management",
-            Content = "This action cannot be undone. Are you sure you want to proceed?",
+            Title = "重置 TPM",
+            Content = "该操作不可挽回，确定要继续吗？",
         };
         dial = dialog;
         dialog.PrimaryButtonClick += Dialog_PrimaryButtonClick;
@@ -71,7 +71,7 @@ public sealed partial class MainPage : Page
     private async void Dialog_PrimaryButtonClick(ContentDialog sender, ContentDialogButtonClickEventArgs args)
     {
         args.Cancel = true;
-        dial.Content = "Starting TPM reset... Please wait.";
+        dial.Content = "开始重置 TPM... 请稍等。";
         dial.IsPrimaryButtonEnabled = false;
         dial.IsSecondaryButtonEnabled = false;
 
@@ -87,8 +87,8 @@ public sealed partial class MainPage : Page
         Status.Text = ViewModelTpm.Status;
 
         // Status bar logic
-        StatusBar.Severity = ViewModelTpm.Status == "Ready" ? InfoBarSeverity.Success : InfoBarSeverity.Error;
-        StatusBar.Title = $"Status: {ViewModelTpm.Status}";
+        StatusBar.Severity = ViewModelTpm.Status == "已就绪" ? InfoBarSeverity.Success : InfoBarSeverity.Error;
+        StatusBar.Title = $"状态：{ViewModelTpm.Status}";
     }
 
     private void HyperlinkButton_Click(object sender, RoutedEventArgs e)
@@ -103,8 +103,8 @@ public sealed partial class MainPage : Page
         Status.Text = ViewModelTpm.Status;
 
         // Status bar logic
-        StatusBar.Severity = ViewModelTpm.Status == "Ready" ? InfoBarSeverity.Success : InfoBarSeverity.Error;
-        StatusBar.Title = $"Status: {ViewModelTpm.Status}";
+        StatusBar.Severity = ViewModelTpm.Status == "已就绪" ? InfoBarSeverity.Success : InfoBarSeverity.Error;
+        StatusBar.Title = $"状态：{ViewModelTpm.Status}";
 
     }
 }

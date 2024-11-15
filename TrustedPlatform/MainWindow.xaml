@@ -7,7 +7,7 @@
     xmlns:local="using:Rebound.TrustedPlatform"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:winuiex="using:WinUIEx"
-    Title="TPM Management"
+    Title="TPM 管理"
     Closed="WindowEx_Closed"
     mc:Ignorable="d">
     <Grid x:Name="ContentGrid">

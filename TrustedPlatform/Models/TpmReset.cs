@@ -5,7 +5,7 @@ public class TpmReset
 {
     public static async Task ResetTpmAsync(ContentDialog dial)
     {
-        dial.Content = "Processing...";
+        dial.Content = "运行中...";
         try
         {
             // Path to the PowerShell script
@@ -36,13 +36,13 @@ public class TpmReset
             if (process.ExitCode == 0)
             {
                 // Update InfoBar for success
-                dial.Content = "TPM reset successfully completed.";
-                dial.SecondaryButtonText = "Close";
+                dial.Content = "TPM 重置已完成。";
+                dial.SecondaryButtonText = "关闭";
             }
             else
             {
                 // Update InfoBar for failure
-                dial.Content = "TPM reset failed. Please try again.";
+                dial.Content = "TPM 重置失败，请重试。";
                 dial.IsPrimaryButtonEnabled = true;
             }
             dial.IsSecondaryButtonEnabled = true;
@@ -50,7 +50,7 @@ public class TpmReset
         catch (Exception ex)
         {
             // Handle exceptions and update InfoBar for failure
-            dial.Content = $"Operation cancelled from User Account Control.";
+            dial.Content = $"操作被用户账户控制（UAC）取消。";
             dial.IsPrimaryButtonEnabled = true;
             dial.IsSecondaryButtonEnabled = true;
         }

@@ -13,9 +13,9 @@
         <NavigationView
             IsPaneOpen="False"
             IsSettingsVisible="False"
-            PaneTitle="TPM Management">
+            PaneTitle="TPM 管理">
             <NavigationView.MenuItems>
-                <NavigationViewItem Content="TPM Management on Local Computer" IsSelected="True">
+                <NavigationViewItem Content="本地计算机上的 TPM 管理" IsSelected="True">
                     <NavigationViewItem.Icon>
                         <FontIcon Glyph="&#xE8D7;" />
                     </NavigationViewItem.Icon>
@@ -37,23 +37,23 @@
                         <TextBlock
                         FontSize="16"
                         FontWeight="Bold"
-                        Text="TPM Management on Local Computer" />
+                        Text="本地计算机上的 TPM 管理" />
                         <Expander
                         HorizontalAlignment="Stretch"
-                        Header="Overview"
+                        Header="概述"
                         IsExpanded="True">
-                            <TextBlock Text="Windows computers containing a Trusted Platform Module (TPM) to provide enhanced security features. This snap-in displays information about the computer's TPM and allows administrators to manage the device." TextWrapping="WrapWholeWords" />
+                            <TextBlock Text="装有可信平台模块（TPM）的 Windows 电脑可以获得更强的安全功能。在此面板中可以查看 TMP 信息和管理 TMP 模块。" TextWrapping="WrapWholeWords" />
                         </Expander>
                         <InfoBar
                         x:Name="StatusBar"
-                        Title="Status: Not Implemented."
+                        Title="状态 ：不支持。"
                         IsClosable="False"
                         IsOpen="True"
                         Severity="Warning" />
                         <Expander
                         HorizontalAlignment="Stretch"
                         HorizontalContentAlignment="Stretch"
-                        Header="TPM Manufacturer Information"
+                        Header="TPM 制造商信息"
                         IsExpanded="True">
 
                             <!--  Information Grid  -->
@@ -81,7 +81,7 @@
                                 VerticalAlignment="Center"
                                 FontSize="12"
                                 FontWeight="SemiBold"
-                                Text="Manufacturer Name:" />
+                                Text="制造商名称：" />
                                 <TextBlock
                                 x:Name="ManufacturerName"
                                 Grid.Row="0"
@@ -98,7 +98,7 @@
                                 VerticalAlignment="Center"
                                 FontSize="12"
                                 FontWeight="SemiBold"
-                                Text="Manufacturer Version:" />
+                                Text="制造商版本：" />
                                 <TextBlock
                                 x:Name="ManufacturerVersion"
                                 Grid.Row="1"
@@ -116,7 +116,7 @@
                                 VerticalAlignment="Center"
                                 FontSize="12"
                                 FontWeight="SemiBold"
-                                Text="Specification Version:" />
+                                Text="规范版本：" />
                                 <TextBlock
                                 x:Name="SpecificationVersion"
                                 Grid.Row="2"
@@ -135,7 +135,7 @@
                                 VerticalAlignment="Center"
                                 FontSize="12"
                                 FontWeight="SemiBold"
-                                Text="TPM SubVersion:" />
+                                Text="TPM 子版本：" />
                                 <TextBlock
                                 x:Name="TpmSubVersion"
                                 Grid.Row="3"
@@ -153,7 +153,7 @@
                                 VerticalAlignment="Center"
                                 FontSize="12"
                                 FontWeight="SemiBold"
-                                Text="PC Client Spec Version:" />
+                                Text="电脑客户端规范版本：" />
                                 <TextBlock
                                 x:Name="PcClientSpecVersion"
                                 Grid.Row="4"
@@ -172,7 +172,7 @@
                                 FontSize="12"
                                    TextWrapping="Wrap"
                                 FontWeight="SemiBold"
-                                Text="PCR Values:" />
+                                Text="PCR 值:" />
                                 <TextBlock
                                 x:Name="PcrValues"
                                 Grid.Row="5"
@@ -193,7 +193,7 @@
                             VerticalAlignment="Center"
                             FontSize="14"
                             FontWeight="Bold"
-                            Text="Status:" />
+                            Text="状态：" />
                             <TextBlock
                             x:Name="Status"
                             Margin="10,0,0,0"
@@ -213,7 +213,7 @@
                         <TextBlock
                             FontSize="16"
                             FontWeight="Bold"
-                            Text="Actions" />
+                            Text="操作" />
                         <!--  Reset TPM Button  -->
                         <StackPanel Spacing="4">
                             <HyperlinkButton
@@ -221,14 +221,14 @@
                                 HorizontalContentAlignment="Left"
                                 BorderThickness="0"
                                 Click="Button_Click">
-                                Reset TPM
+                                重置 TPM
                             </HyperlinkButton>
                             <HyperlinkButton
                                 HorizontalAlignment="Stretch"
                                 HorizontalContentAlignment="Left"
                                 BorderThickness="0"
                                 Click="HyperlinkButton_Click">
-                                Refresh
+                                刷新
                             </HyperlinkButton>
                         </StackPanel>
                     </StackPanel>

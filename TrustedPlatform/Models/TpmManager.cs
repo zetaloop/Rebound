@@ -109,14 +109,14 @@ public class TpmManager : INotifyPropertyChanged
             {
                 foreach (ManagementObject queryObj in searcher.Get())
                 {
-                    ManufacturerName = queryObj["ManufacturerID"] != null ? ConvertManufacturerIdToName((uint)queryObj["ManufacturerID"]) : "Unknown";
-                    ManufacturerVersion = queryObj["ManufacturerVersion"]?.ToString() ?? "Unknown";
-                    SpecificationVersion = queryObj["SpecVersion"]?.ToString() ?? "Unknown";
-                    TpmSubVersion = queryObj["ManufacturerVersion"]?.ToString() ?? "Unknown";
-                    PcClientSpecVersion = queryObj["SpecVersion"]?.ToString() ?? "Unknown";
+                    ManufacturerName = queryObj["ManufacturerID"] != null ? ConvertManufacturerIdToName((uint)queryObj["ManufacturerID"]) : "未知";
+                    ManufacturerVersion = queryObj["ManufacturerVersion"]?.ToString() ?? "未知";
+                    SpecificationVersion = queryObj["SpecVersion"]?.ToString() ?? "未知";
+                    TpmSubVersion = queryObj["ManufacturerVersion"]?.ToString() ?? "未知";
+                    PcClientSpecVersion = queryObj["SpecVersion"]?.ToString() ?? "未知";
                     PcrValues = GetPcrValues();
 
-                    Status = queryObj["IsActivated_InitialValue"] != null && (bool)queryObj["IsActivated_InitialValue"] ? "Ready" : "Not Ready";
+                    Status = queryObj["IsActivated_InitialValue"] != null && (bool)queryObj["IsActivated_InitialValue"] ? "已就绪" : "未就绪";
                 }
             }
         }
@@ -128,7 +128,7 @@ public class TpmManager : INotifyPropertyChanged
             TpmSubVersion = "N/A";
             PcClientSpecVersion = "N/A";
             PcrValues = "N/A";
-            Status = "Error communicating with TPM";
+            Status = "无法与 TPM 通讯";
             Console.WriteLine($"An error occurred while getting TPM information: {ex.Message}");
         }
     }
@@ -163,12 +163,12 @@ public class TpmManager : INotifyPropertyChanged
             // Check if pcrValues has entries
             if (pcrValues.Length == 0)
             {
-                return "No PCR values available.";
+                return "无可用 PCR 值。";
             }
 
             for (int i = 0; i < pcrSelectionOut.Length; i++)
             {
-                pcrStringBuilder.AppendLine($"PCR {i}: {BitConverter.ToString(pcrValues[i].buffer)}");
+                pcrStringBuilder.AppendLine($"PCR {i}：{BitConverter.ToString(pcrValues[i].buffer)}");
             }
 
             return pcrStringBuilder.ToString();
@@ -177,13 +177,13 @@ public class TpmManager : INotifyPropertyChanged
         {
             // Log specific TPM-related errors
             Debug.WriteLine($"TPM Error retrieving PCR values: {tpmEx.Message} (Error Code:)");
-            return $"TPM Error: {tpmEx.Message} (Error Code:)";
+            return $"TPM 错误：{tpmEx.Message}（错误代码）";
         }
         catch (Exception ex)
         {
             // Log general errors with stack trace
             Debug.WriteLine($"General Error retrieving PCR values: {ex.Message}\n{ex.StackTrace}");
-            return $"Error retrieving PCR values: {ex.Message}";
+            return $"无法获取 PCR 值：{ex.Message}";
         }
         finally
         {
