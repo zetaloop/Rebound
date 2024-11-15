@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
@@ -24,22 +24,22 @@ namespace Rebound.Defrag
             IsMinimizable = false;
             this.MoveAndResize(parentX + 50, parentY + 50, 550, 600);
             IsResizable = false;
-            Title = "Scheduled optimization";
+            Title = "定期优化";
             SystemBackdrop = new MicaBackdrop();
             AppWindow.DefaultTitleBarShouldMatchAppModeTheme = true;
             LoadData();
-            if (GetTaskFrequency() is not "Off")
+            if (GetTaskFrequency() is not "关闭")
             {
                 EnableTaskSwitch.IsOn = true;
-                if (GetTaskFrequency().Contains("daily", StringComparison.CurrentCultureIgnoreCase))
+                if (GetTaskFrequency().Contains("每日", StringComparison.CurrentCultureIgnoreCase))
                 {
                     Frequency.SelectedIndex = 0;
                 }
-                if (GetTaskFrequency().Contains("weekly", StringComparison.CurrentCultureIgnoreCase))
+                if (GetTaskFrequency().Contains("每周", StringComparison.CurrentCultureIgnoreCase))
                 {
                     Frequency.SelectedIndex = 1;
                 }
-                if (GetTaskFrequency().Contains("monthly", StringComparison.CurrentCultureIgnoreCase))
+                if (GetTaskFrequency().Contains("每月", StringComparison.CurrentCultureIgnoreCase))
                 {
                     Frequency.SelectedIndex = 2;
                 }
@@ -122,7 +122,7 @@ namespace Rebound.Defrag
                 else
                 {
                     td = ts.NewTask();
-                    td.RegistrationInfo.Description = "Scheduled Defrag Task";
+                    td.RegistrationInfo.Description = "定期清理磁盘碎片任务";
                     td.Settings.Priority = ProcessPriorityClass.High;
                     td.Settings.Volatile = false;
                     td.Settings.RunOnlyIfLoggedOn = false;
@@ -132,17 +132,17 @@ namespace Rebound.Defrag
                 td.Triggers.Clear();
                 switch (scheduleFrequency.ToLower())
                 {
-                    case "daily":
+                    case "每日":
                         td.Triggers.Add(new DailyTrigger { DaysInterval = 1 });
                         break;
-                    case "weekly":
+                    case "每周":
                         td.Triggers.Add(new WeeklyTrigger { DaysOfWeek = DaysOfTheWeek.Sunday });
                         break;
-                    case "monthly":
+                    case "每月":
                         td.Triggers.Add(new MonthlyTrigger { DaysOfMonth = [1] });
                         break;
                     default:
-                        throw new ArgumentException("Invalid schedule frequency");
+                        throw new ArgumentException("任务周期无效");
                 }
 
                 // Build the defrag command with selected drives
@@ -255,15 +255,15 @@ namespace Rebound.Defrag
                                 MediaType = mediaType,
                                 DriveLetter = drive,
                             };
-                            if (item.MediaType == "Removable")
+                            if (item.MediaType == "可移动存储")
                             {
                                 item.ImagePath = "ms-appx:///Assets/DriveRemovable.png";
                             }
-                            if (item.MediaType == "Unknown")
+                            if (item.MediaType == "未知")
                             {
                                 item.ImagePath = "ms-appx:///Assets/DriveUnknown.png";
                             }
-                            if (item.MediaType == "CD-ROM")
+                            if (item.MediaType == "光盘")
                             {
                                 item.ImagePath = "ms-appx:///Assets/DriveOptical.png";
                             }
@@ -282,15 +282,15 @@ namespace Rebound.Defrag
                                 MediaType = mediaType,
                                 DriveLetter = drive,
                             };
-                            if (item.MediaType == "Removable")
+                            if (item.MediaType == "可移动存储")
                             {
                                 item.ImagePath = "ms-appx:///Assets/DriveRemovable.png";
                             }
-                            if (item.MediaType == "Unknown")
+                            if (item.MediaType == "未知")
                             {
                                 item.ImagePath = "ms-appx:///Assets/DriveUnknown.png";
                             }
-                            if (item.MediaType == "CD-ROM")
+                            if (item.MediaType == "光盘")
                             {
                                 item.ImagePath = "ms-appx:///Assets/DriveOptical.png";
                             }

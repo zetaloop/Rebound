@@ -38,26 +38,26 @@ public class SystemVolumes
             foreach (var volume in searcher.Get().Cast<ManagementObject>())
             {
                 var volumePath = volume["DeviceID"].ToString(); // This gives the \\?\Volume{GUID} path
-                var fileSystem = volume["FileSystem"]?.ToString() ?? "Unknown";
+                var fileSystem = volume["FileSystem"]?.ToString() ?? "未知";
                 var size = (ulong)volume["Capacity"];
 
                 // We can further refine this by querying for EFI, Recovery, etc., based on size and file system
                 string friendlyName;
                 if (fileSystem == "FAT32" && size < 512 * 1024 * 1024)
                 {
-                    friendlyName = "EFI System Partition";
+                    friendlyName = "EFI 系统分区";
                 }
                 else if (fileSystem == "NTFS" && size > 500 * 1024 * 1024)
                 {
-                    friendlyName = "Recovery Partition";
+                    friendlyName = "恢复分区";
                 }
                 else if (fileSystem == "NTFS" && size < 500 * 1024 * 1024)
                 {
-                    friendlyName = "System Reserved Partition";
+                    friendlyName = "系统保留分区";
                 }
                 else
                 {
-                    friendlyName = "Unknown System Partition";
+                    friendlyName = "未知系统分区";
                 }
 
                 volumes.Add(new VolumeInfo

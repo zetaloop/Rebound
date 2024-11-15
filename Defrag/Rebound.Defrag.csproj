@@ -22,7 +22,7 @@
        <AppInstallerUri>C:\Users\Lenovo\Desktop\rdfrgui</AppInstallerUri>
        <HoursBetweenUpdateChecks>0</HoursBetweenUpdateChecks>
        <ApplicationIcon>Rebound.Defrag.ico</ApplicationIcon>
-       <PackageCertificateThumbprint>805D9FAF3E251362A569D694C3D7834BE80FE5B8</PackageCertificateThumbprint>
+       <PackageCertificateThumbprint>8D63D861AFD2A7379CD15095700274CD29544BC1</PackageCertificateThumbprint>
   </PropertyGroup>
   <ItemGroup>
     <None Remove="Assets\Administrator.png" />

@@ -13,11 +13,11 @@
         <StackPanel Margin="15,5,15,13" Spacing="10">
             <InfoBar
                 x:Name="HeaderInfoBar"
-                Title="You can optimize your drives to help your computer run more efficiently, or analyze them to find out if they need to be optimized. Only drives on or connected to your computer are shown."
+                Title="优化驱动器可以让电脑运行更快。若想优化一块硬盘或可移动设备，请将它接入电脑。"
                 x:FieldModifier="public"
                 IsClosable="False"
                 IsOpen="True"
-                Message="Hover over a drive in the list to see its full path. Toggle the &quot;Advanced&quot; option to see system partitions." />
+                Message="将鼠标光标悬停在驱动器上可查看完整路径，点击 &quot;高级&quot; 选项以显示系统分区。" />
             <ListView
                 x:Name="MyListView"
                 Height="205"
@@ -55,8 +55,8 @@
                 <ToggleSwitch
                     x:Name="AdvancedView"
                     x:FieldModifier="public"
-                    OffContent="Advanced"
-                    OnContent="Advanced"
+                    OffContent="高级"
+                    OnContent="高级"
                     Toggled="AdvancedView_Toggled" />
                 <StackPanel
                     Margin="150,0,0,0"
@@ -431,28 +431,28 @@
                         x:Name="AnalyzeButton"
                         Width="100"
                         Click="Button_Click_2"
-                        Content="Analyze"
-                        ToolTipService.ToolTip="Refresh the information of the selected drive to see whether it needs to be optimized or not." />
+                        Content="分析"
+                        ToolTipService.ToolTip="刷新所选驱动器的优化信息" />
                     <SplitButton
                         x:Name="OptimizeButton"
                         Width="150"
                         Click="Button_Click"
                         IsEnabled="True"
                         Style="{ThemeResource AccentSplitButtonStyle}"
-                        ToolTipService.ToolTip="Defragment and/or optimize the selected drive">
+                        ToolTipService.ToolTip="清理碎片或优化所选驱动器">
                         <StackPanel Orientation="Horizontal" Spacing="10">
                             <Image
                                 x:Name="Admin1"
                                 Width="20"
                                 Source="/Assets/Administrator.png" />
-                            <TextBlock Text="Optimize" />
+                            <TextBlock Text="优化" />
                         </StackPanel>
                         <SplitButton.Flyout>
                             <MenuFlyout>
                                 <MenuFlyoutItem
                                     x:Name="OptimizeItem"
                                     Click="MenuFlyoutItem_Click"
-                                    Text="Optimize selected drives">
+                                    Text="优化所选驱动器">
                                     <MenuFlyoutItem.Icon>
                                         <ImageIcon x:Name="Admin2" Source="/Assets/Administrator.png" />
                                     </MenuFlyoutItem.Icon>
@@ -460,17 +460,17 @@
                                 <MenuFlyoutItem
                                     x:Name="OptimizeAllItem"
                                     Click="MenuFlyoutItem_Click_1"
-                                    Text="Optimize all">
+                                    Text="优化全部驱动器">
                                     <MenuFlyoutItem.Icon>
                                         <ImageIcon x:Name="Admin3" Source="/Assets/Administrator.png" />
                                     </MenuFlyoutItem.Icon>
                                 </MenuFlyoutItem>
-                                <MenuFlyoutItem Click="MenuFlyoutItem_Click_3" Text="Launch legacy app">
+                                <MenuFlyoutItem Click="MenuFlyoutItem_Click_3" Text="原版优化驱动器工具">
                                     <MenuFlyoutItem.Icon>
                                         <FontIcon Glyph="" />
                                     </MenuFlyoutItem.Icon>
                                 </MenuFlyoutItem>
-                                <MenuFlyoutItem Click="MenuFlyoutItem_Click_2" Text="Learn more">
+                                <MenuFlyoutItem Click="MenuFlyoutItem_Click_2" Text="了解详情">
                                     <MenuFlyoutItem.Icon>
                                         <FontIcon Glyph="" />
                                     </MenuFlyoutItem.Icon>
@@ -482,10 +482,10 @@
             </Grid>
             <InfoBar
                 x:Name="DetailsBar"
-                Title="Unknown Drive (C:)"
+                Title="未知磁盘 (C:)"
                 IsClosable="False"
                 IsOpen="True"
-                Message="Media type: Loading...&#x0a;Last analyzed or optimized: Loading...&#x0a;Current status: Loading..." />
+                Message="设备类型：加载中...&#x0a;上次分析：加载中...&#x0a;当前状态：加载中..." />
             <Grid
                 Height="120"
                 Padding="15"
@@ -494,20 +494,20 @@
                 BorderThickness="1"
                 CornerRadius="4">
                 <StackPanel Spacing="5">
-                    <TextBlock FontWeight="SemiBold" Text="Scheduled optimization" />
-                    <TextBlock x:Name="ScheduledOptimizationDetails" Text="Off" />
+                    <TextBlock FontWeight="SemiBold" Text="定期优化" />
+                    <TextBlock x:Name="ScheduledOptimizationDetails" Text="关闭" />
                     <Button
                         Width="120"
                         Margin="0,5,0,0"
                         HorizontalAlignment="Right"
                         Click="Button_Click_1"
-                        ToolTipService.ToolTip="Change scheduled optimization task settings.">
+                        ToolTipService.ToolTip="更改定期优化任务设置">
                         <StackPanel Orientation="Horizontal" Spacing="10">
                             <Image
                                 x:Name="Admin4"
                                 Width="20"
                                 Source="/Assets/Administrator.png" />
-                            <TextBlock x:Name="ScheduledTaskText" Text="Turn on" />
+                            <TextBlock x:Name="ScheduledTaskText" Text="开启" />
                         </StackPanel>
                     </Button>
                 </StackPanel>

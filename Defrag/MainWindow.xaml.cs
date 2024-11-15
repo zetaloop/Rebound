@@ -36,7 +36,7 @@ public sealed partial class MainWindow : WindowEx
         SystemBackdrop = new MicaBackdrop();
 
         // Set the window title
-        Title = "Optimize Drives";
+        Title = "优化驱动器";
 
         // Window customization
         IsMaximizable = false;
@@ -184,12 +184,12 @@ public sealed partial class MainWindow : WindowEx
             }
             catch
             {
-                return "Never....";
+                return "从未运行....";
             }
         }
         else
         {
-            return "Unknown....";
+            return "未知....";
         }
     }
 
@@ -201,34 +201,34 @@ public sealed partial class MainWindow : WindowEx
         }
         else
         {
-            info = "Unknown....";
+            info = "未知....";
         }
         if (MyListView.SelectedItem != null)
         {
             var selectedItem = MyListView.SelectedItem as DiskItem;
             DetailsBar.Title = selectedItem?.Name;
-            DetailsBar.Message = $"Media type: {selectedItem?.MediaType}\nLast analyzed or optimized: {info[..^4]}\nCurrent status: {status}";
+            DetailsBar.Message = $"设备类型：{selectedItem?.MediaType}\n上次分析：{info[..^4]}\n当前状态：{status}";
             DetailsBar.Severity = InfoBarSeverity.Informational;
             OptimizeButton.IsEnabled = AdvancedView.IsEnabled;
-            if (status.Contains("Needs optimization"))
+            if (status.Contains("需要优化"))
             {
                 DetailsBar.Severity = InfoBarSeverity.Warning;
             }
-            if (selectedItem?.MediaType == "CD-ROM")
+            if (selectedItem?.MediaType == "光盘")
             {
-                DetailsBar.Message = "Media type: CD-ROM\nLast analyzed or optimized: Never\nCurrent status: cannot be optimized";
+                DetailsBar.Message = "设备类型：光盘\n上次分析：从未运行\n当前状态：不能优化光盘";
                 DetailsBar.Severity = InfoBarSeverity.Error;
                 VisualStateManager.GoToState(OptimizeButton, "Disabled", true);
                 OptimizeButton.IsEnabled = false;
             }
-            if (selectedItem?.Name == "EFI System Partition")
+            if (selectedItem?.Name == "EFI 系统分区")
             {
-                DetailsBar.Message = $"Media type: {selectedItem.MediaType}\nLast analyzed or optimized: Never\nCurrent status: cannot be optimized (EFI System Partition)";
+                DetailsBar.Message = $"设备类型：{selectedItem.MediaType}\n上次分析：从未运行\n当前状态：不能优化 EFI 系统分区";
                 DetailsBar.Severity = InfoBarSeverity.Informational;
             }
-            if (selectedItem?.Name == "Recovery Partition")
+            if (selectedItem?.Name == "恢复分区")
             {
-                DetailsBar.Message = $"Media type: {selectedItem.MediaType}\nLast analyzed or optimized: Never\nCurrent status: cannot be optimized (Recovery Partition)";
+                DetailsBar.Message = $"设备类型：{selectedItem.MediaType}\n上次分析：从未运行\n当前状态：不能优化恢复分区";
                 DetailsBar.Severity = InfoBarSeverity.Error;
                 VisualStateManager.GoToState(OptimizeButton, "Disabled", true);
                 OptimizeButton.IsEnabled = false;
@@ -261,40 +261,40 @@ public sealed partial class MainWindow : WindowEx
                 if (daysPassed == 0)
                 {
                     //return $"OK (Last optimized: today)";
-                    return $"OK (optimized today)";
+                    return $"正常（今日已优化）";
                 }
 
                 if (daysPassed == 1)
                 {
                     //return $"OK (Last optimized: yesterday)";
-                    return $"OK (1 day since the last optimization)";
+                    return $"正常（1 天前已优化）";
                 }
 
                 if (daysPassed < 50)
                 {
                     //return $"OK (Last optimized: {daysPassed} days ago)";
-                    return $"OK ({daysPassed} days since the last optimization)";
+                    return $"正常（{daysPassed} 天前已优化）";
                 }
 
                 if (daysPassed >= 50)
                 {
                     //return $"Needs optimization (Last optimized: {daysPassed} days ago)";
-                    return $"Needs optimization ({daysPassed} days since the last optimization)";
+                    return $"需要优化（距上次优化已有 {daysPassed} 天）";
                 }
 
                 else
                 {
-                    return "Unknown";
+                    return "未知";
                 }
             }
             else
             {
-                return "Please select an item to proceed.";
+                return "请选择一项";
             }
         }
         catch
         {
-            return "Needs optimization";
+            return "需要优化";
         }
     }
 
@@ -316,7 +316,7 @@ public sealed partial class MainWindow : WindowEx
 
     public async Task LoadData(bool loadSystemPartitions)
     {
-        Lock(false, "Loading drive information...");
+        Lock(false, "正在加载驱动器信息...");
 
         // Initial delay
         // Essential for ensuring the UI loads before starting tasks
@@ -354,15 +354,15 @@ public sealed partial class MainWindow : WindowEx
                             MediaType = mediaType,
                             DriveLetter = drive,
                         };
-                        if (item.MediaType == "Removable")
+                        if (item.MediaType == "可移动存储")
                         {
                             item.ImagePath = "ms-appx:///Assets/DriveRemovable.png";
                         }
-                        if (item.MediaType == "Unknown")
+                        if (item.MediaType == "未知")
                         {
                             item.ImagePath = "ms-appx:///Assets/DriveUnknown.png";
                         }
-                        if (item.MediaType == "CD-ROM")
+                        if (item.MediaType == "光盘")
                         {
                             item.ImagePath = "ms-appx:///Assets/DriveOptical.png";
                         }
@@ -382,15 +382,15 @@ public sealed partial class MainWindow : WindowEx
                             MediaType = mediaType,
                             DriveLetter = drive,
                         };
-                        if (item.MediaType == "Removable")
+                        if (item.MediaType == "可移动存储")
                         {
                             item.ImagePath = "ms-appx:///Assets/DriveRemovable.png";
                         }
-                        if (item.MediaType == "Unknown")
+                        if (item.MediaType == "未知")
                         {
                             item.ImagePath = "ms-appx:///Assets/DriveUnknown.png";
                         }
-                        if (item.MediaType == "CD-ROM")
+                        if (item.MediaType == "光盘")
                         {
                             item.ImagePath = "ms-appx:///Assets/DriveOptical.png";
                         }
@@ -542,9 +542,9 @@ public sealed partial class MainWindow : WindowEx
                                 {
                                     var driveType = MEDIATYPE switch
                                     {
-                                        "3" => "HDD (Hard Disk Drive)",
-                                        "4" => "SSD (Solid State Drive)",
-                                        _ => "Unknown"
+                                        "3" => "HDD（机械硬盘）",
+                                        "4" => "SSD（固态硬盘）",
+                                        _ => "未知"
                                     };
 
                                     return driveType;
@@ -559,7 +559,7 @@ public sealed partial class MainWindow : WindowEx
         {
 
         }
-        return "Error";
+        return "错误";
     }
 
     private static async Task<string?> GetDeviceIdFromDriveAsync(string driveRoot)
@@ -577,7 +577,7 @@ public sealed partial class MainWindow : WindowEx
                     return logicalDisk["DeviceID"]?.ToString(); // Return the DeviceID of the disk drive
                 }
             }
-            return "Unknown"; // Fallback if not found
+            return "未知"; // Fallback if not found
         });
     }
 
@@ -587,13 +587,13 @@ public sealed partial class MainWindow : WindowEx
 
         return driveType switch
         {
-            Win32Helper.DriveType.DRIVE_REMOVABLE => "Removable",
+            Win32Helper.DriveType.DRIVE_REMOVABLE => "可移动存储",
             Win32Helper.DriveType.DRIVE_FIXED => GetDiskDriveFromLetter(driveRoot),
-            Win32Helper.DriveType.DRIVE_REMOTE => "Network",
-            Win32Helper.DriveType.DRIVE_CDROM => "CD-ROM",
-            Win32Helper.DriveType.DRIVE_RAMDISK => "RAM Disk",
-            Win32Helper.DriveType.DRIVE_NO_ROOT_DIR => "No Root Directory",
-            _ => "Unknown",
+            Win32Helper.DriveType.DRIVE_REMOTE => "网络存储",
+            Win32Helper.DriveType.DRIVE_CDROM => "光盘",
+            Win32Helper.DriveType.DRIVE_RAMDISK => "内存盘",
+            Win32Helper.DriveType.DRIVE_NO_ROOT_DIR => "缺少根目录",
+            _ => "未知",
         };
     }
 
@@ -642,7 +642,7 @@ public sealed partial class MainWindow : WindowEx
         {
             if (item?.IsChecked == true)
             {
-                Lock(false, "Loading...", true);
+                Lock(false, "运行中...", true);
 
                 MyListView.SelectedIndex = ((List<DiskItem?>)MyListView.ItemsSource).IndexOf(item);
 
@@ -667,7 +667,7 @@ $global:OutputLines
                 {
                     if (DetailsBar.Severity == InfoBarSeverity.Error)
                     {
-                        LoadSelectedItemInfo("Cannot be optimized. Skipping...");
+                        LoadSelectedItemInfo("不可优化，跳过...");
                         await Task.Delay(500);
                         continue;
                     }
@@ -708,7 +708,7 @@ $global:OutputLines
                     process.BeginOutputReadLine();
 
                     Lock(false, "", true);
-                    LoadSelectedItemInfo("Optimizing...");
+                    LoadSelectedItemInfo("正在优化...");
 
                     void UpdateIO(string data)
                     {
@@ -717,11 +717,11 @@ $global:OutputLines
                             return;
                         }
 
-                        if (data.Contains("VERBOSE: ") && data.Contains(" complete."))
+                        if (data.Contains("VERBOSE: ") && (data.Contains(" complete.") || data.Contains(" 完成。")))
                         {
                             var a = data[data.LastIndexOf("VERBOSE: ")..].Replace("VERBOSE: ", string.Empty);
 
-                            var dataToReplace = " complete.";
+                            var dataToReplace = data.Contains(" 完成。") ? " 完成。" : " complete.";
 
                             DispatcherQueue.TryEnqueue(() => { RunUpdate(a, dataToReplace); });
                         }
@@ -736,19 +736,19 @@ $global:OutputLines
                             CurrentProgress.IsIndeterminate = false;
                             SetProgressState(TaskbarProgressBarState.Normal);
                             SetProgressValue((int)CurrentProgress.Value, (int)CurrentProgress.Maximum);
-                            if (a.Contains(" complete..."))
+                            if (a.Contains(" complete...") || a.Contains(" 完成..."))
                             {
-                                dataToReplace = " complete...";
+                                dataToReplace = a.Contains(" 完成...") ? " 完成..." : " complete...";
                                 CurrentDisk.Text = item?.DriveLetter?.ToString().Contains('}') != true
-                                    ? $"Drive {volume}: - {a.Remove(a.IndexOf(" complete..."))}"
-                                    : $"{((DiskItem)MyListView.SelectedItem).Name} - {a.Remove(a.IndexOf(" complete..."))}";
+                                    ? $"驱动器 {volume}: - {a.Remove(a.IndexOf(dataToReplace))}"
+                                    : $"{((DiskItem)MyListView.SelectedItem).Name} - {a.Remove(a.IndexOf(dataToReplace))}";
                             }
-                            else if (a.Contains(" complete."))
+                            else if (a.Contains(" complete.") || a.Contains(" 完成。"))
                             {
-                                dataToReplace = " complete.";
+                                dataToReplace = a.Contains(" 完成。") ? " 完成。" : " complete.";
                                 CurrentDisk.Text = item?.DriveLetter?.ToString().Contains('}') != true
-                                    ? $"Drive {volume}: - {a.Remove(a.IndexOf(" complete."))}"
-                                    : $"{((DiskItem)MyListView.SelectedItem).Name} - {a.Remove(a.IndexOf(" complete."))}";
+                                    ? $"驱动器 {volume}: - {a.Remove(a.IndexOf(dataToReplace))}"
+                                    : $"{((DiskItem)MyListView.SelectedItem).Name} - {a.Remove(a.IndexOf(dataToReplace))}";
 
                             }
                         }
@@ -765,11 +765,11 @@ $global:OutputLines
                 }
                 catch (System.ComponentModel.Win32Exception ex) when (ex.NativeErrorCode == 1223)
                 {
-                    ShowMessage("Defragmentation was canceled by the user.");
+                    ShowMessage("用户取消了碎片整理。");
                 }
                 catch (Exception ex)
                 {
-                    ShowMessage($"Error: {ex.Message}");
+                    ShowMessage($"错误：{ex.Message}");
                 }
             }
         }
@@ -824,7 +824,7 @@ $global:OutputLines
 
         foreach (var item in (List<DiskItem>)MyListView.ItemsSource)
         {
-            Lock(false, "Optimizing...", true);
+            Lock(false, "正在优化...", true);
 
             var volume = item.DriveLetter?.ToString().Remove(1, 2);
             var arguments = $@"
@@ -849,7 +849,7 @@ $global:OutputLines
 
                 if (DetailsBar.Severity == InfoBarSeverity.Error)
                 {
-                    LoadSelectedItemInfo("Cannot be optimized. Skipping...");
+                    LoadSelectedItemInfo("不可优化，跳过...");
                     await Task.Delay(500);
                     if (MyListView.SelectedIndex + 1 != j)
                     {
@@ -895,7 +895,7 @@ $global:OutputLines
                 process.BeginOutputReadLine();
 
                 Lock(false, "", true);
-                LoadSelectedItemInfo("Optimizing...");
+                LoadSelectedItemInfo("正在优化...");
 
                 void UpdateIO(string data)
                 {
@@ -904,11 +904,11 @@ $global:OutputLines
                         return;
                     }
 
-                    if (data.Contains("VERBOSE: ") && data.Contains(" complete."))
+                    if (data.Contains("VERBOSE: ") && data.Contains(" complete.") || data.Contains(" 完成。"))
                     {
                         var a = data[data.LastIndexOf("VERBOSE: ")..].Replace("VERBOSE: ", string.Empty);
 
-                        var dataToReplace = " complete.";
+                        var dataToReplace = data.Contains(" 完成。") ? " 完成。" : " complete.";
 
                         DispatcherQueue.TryEnqueue(() => { RunUpdate(a, dataToReplace); });
                     }
@@ -923,19 +923,19 @@ $global:OutputLines
                         CurrentProgress.Value = GetMaxPercentage(a);
                         SetProgressState(TaskbarProgressBarState.Normal);
                         SetProgressValue((int)CurrentProgress.Value, (int)CurrentProgress.Maximum);
-                        if (a.Contains(" complete..."))
+                        if (a.Contains(" complete...") || a.Contains(" 完成..."))
                         {
-                            dataToReplace = " complete...";
+                            dataToReplace = a.Contains(" 完成...") ? " 完成..." : " complete...";
                             CurrentDisk.Text = item?.DriveLetter?.ToString().Contains('}') != true
-                                ? $"Drive {i}/{j} ({volume}:) - {a.Remove(a.IndexOf(" complete..."))}"
-                                : $"{((DiskItem)MyListView.SelectedItem).Name} ({i}/{j}) - {a.Remove(a.IndexOf(" complete..."))}";
+                                ? $"驱动器 {i}/{j} ({volume}:) - {a.Remove(a.IndexOf(dataToReplace))}"
+                                : $"{((DiskItem)MyListView.SelectedItem).Name} ({i}/{j}) - {a.Remove(a.IndexOf(dataToReplace))}";
                         }
-                        else if (a.Contains(" complete."))
+                        else if (a.Contains(" complete.") || a.Contains(" 完成。"))
                         {
-                            dataToReplace = " complete.";
+                            dataToReplace = a.Contains(" 完成。") ? " 完成。" : " complete.";
                             CurrentDisk.Text = item?.DriveLetter?.ToString().Contains('}') != true
-                                ? $"Drive {i}/{j} ({volume}:) - {a.Remove(a.IndexOf(" complete."))}"
-                                : $"{((DiskItem)MyListView.SelectedItem).Name} ({i}/{j}) - {a.Remove(a.IndexOf(" complete."))}";
+                                ? $"驱动器 {i}/{j} ({volume}:) - {a.Remove(a.IndexOf(dataToReplace))}"
+                                : $"{((DiskItem)MyListView.SelectedItem).Name} ({i}/{j}) - {a.Remove(a.IndexOf(dataToReplace))}";
 
                         }
                     }
@@ -956,11 +956,11 @@ $global:OutputLines
             }
             catch (System.ComponentModel.Win32Exception ex) when (ex.NativeErrorCode == 1223)
             {
-                ShowMessage("Defragmentation was canceled by the user.");
+                ShowMessage("用户取消了碎片整理。");
             }
             catch (Exception ex)
             {
-                ShowMessage($"Error: {ex.Message}");
+                ShowMessage($"错误：{ex.Message}");
             }
         }
 
@@ -980,9 +980,9 @@ $global:OutputLines
         {
             var dialog = new ContentDialog
             {
-                Title = "Defragmentation",
+                Title = "碎片整理",
                 Content = message,
-                CloseButtonText = "OK",
+                CloseButtonText = "确定",
                 XamlRoot = Content.XamlRoot
             };
             _ = await dialog.ShowAsync();
@@ -1020,13 +1020,13 @@ $global:OutputLines
         try
         {
             ScheduledOptimizationDetails.Text = GetTaskFrequency();
-            if (GetTaskFrequency() is not "Off")
+            if (GetTaskFrequency() is not "关闭")
             {
-                ScheduledTaskText.Text = "Configure";
+                ScheduledTaskText.Text = "配置";
             }
             else
             {
-                ScheduledTaskText.Text = "Turn on";
+                ScheduledTaskText.Text = "开启";
             }
 
             CheckTask();
@@ -1080,7 +1080,7 @@ $global:OutputLines
 
         if (task.Enabled != true)
         {
-            return $"Off";
+            return $"关闭";
         }
 
         if (task != null)
@@ -1091,19 +1091,19 @@ $global:OutputLines
                 switch (trigger)
                 {
                     case DailyTrigger _:
-                        return "On (Frequency: daily)";
+                        return "开启（频率：每日）";
                     case WeeklyTrigger _:
-                        return "On (Frequency: weekly)";
+                        return "开启（频率：每周）";
                     case MonthlyTrigger _:
-                        return "On (Frequency: monthly)";
+                        return "开启（频率：每月）";
                 }
             }
 
-            return "On (Frequency: unknown)";
+            return "开启（频率：未知）";
         }
         else
         {
-            return $"Off";
+            return $"关闭";
         }
     }
 

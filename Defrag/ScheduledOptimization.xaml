@@ -17,14 +17,14 @@
         </Grid.RowDefinitions>
         <StackPanel Margin="15,5" Spacing="10">
             <InfoBar
-                Title="Rebound Defragment and Optimize Drives will replace the default Windows scheduled optimization task's arguments, making the Windows Defragment and Optimize Drives app prompt for task recovery. This is because Rebound 11 uses newer and safer methods for this automated task."
+                Title="本工具会修改原版定期优化任务的一些参数，使用更新更安全的优化方法。因此，原版优化驱动器工具可能会弹窗提示存在自定义设置。"
                 IsClosable="False"
                 IsOpen="True"
                 Severity="Warning" />
             <ToggleSwitch
                 x:Name="EnableTaskSwitch"
-                OffContent="Disabled"
-                OnContent="Enabled"
+                OffContent="已关闭"
+                OnContent="已开启"
                 Toggled="EnableTaskSwitch_Toggled" />
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -32,22 +32,22 @@
                     <ColumnDefinition Width="12" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <TextBlock VerticalAlignment="Center" Text="Frequency" />
+                <TextBlock VerticalAlignment="Center" Text="频率" />
                 <ComboBox
                     x:Name="Frequency"
                     Grid.Column="2"
                     HorizontalAlignment="Stretch"
                     SelectedIndex="0">
-                    <ComboBoxItem Content="Daily" />
-                    <ComboBoxItem Content="Weekly" />
-                    <ComboBoxItem Content="Monthly" />
+                    <ComboBoxItem Content="每日" />
+                    <ComboBoxItem Content="每周" />
+                    <ComboBoxItem Content="每月" />
                 </ComboBox>
             </Grid>
-            <TextBlock VerticalAlignment="Center" Text="Drives" />
+            <TextBlock VerticalAlignment="Center" Text="驱动器" />
             <CheckBox
                 x:Name="SelectAllBox"
                 Click="CheckBox_Checked_1"
-                Content="Select all" />
+                Content="全选" />
         </StackPanel>
         <ListView
             x:Name="MyListView"
@@ -86,7 +86,7 @@
             Grid.Row="1"
             Margin="15,10"
             VerticalAlignment="Bottom"
-            Content="Optimize new drives"
+            Content="优化新增驱动器"
             IsChecked="True" />
         <Border
             Grid.Row="2"
@@ -110,14 +110,14 @@
                 HorizontalAlignment="Stretch"
                 VerticalAlignment="Center"
                 Click="Button_Click"
-                Content="Apply"
+                Content="保存"
                 Style="{ThemeResource AccentButtonStyle}" />
             <Button
                 Grid.Column="4"
                 HorizontalAlignment="Stretch"
                 VerticalAlignment="Center"
                 Click="Button_Click_1"
-                Content="Cancel" />
+                Content="取消" />
         </Grid>
     </Grid>
 </winuiex:WindowEx>
