@@ -15,7 +15,7 @@
 		<ApplicationIcon>Assets\RunBox.ico</ApplicationIcon>
 		<GenerateAppInstallerFile>True</GenerateAppInstallerFile>
 		<AppxPackageSigningEnabled>True</AppxPackageSigningEnabled>
-		<PackageCertificateThumbprint>BB9378CD33C20B752F2F114DDFD686121E263536</PackageCertificateThumbprint>
+		<PackageCertificateThumbprint>8D63D861AFD2A7379CD15095700274CD29544BC1</PackageCertificateThumbprint>
 		<AppxPackageSigningTimestampDigestAlgorithm>SHA256</AppxPackageSigningTimestampDigestAlgorithm>
 		<AppxAutoIncrementPackageRevision>False</AppxAutoIncrementPackageRevision>
 		<AppxSymbolPackageEnabled>False</AppxSymbolPackageEnabled>

@@ -371,7 +371,7 @@
         </Grid.Resources>
         <TextBlock
             Margin="125,25,25,25"
-            Text="Type the name of a program, folder, document, or Internet resource, and Windows will open it for you."
+            Text="请输入要打开的程序、文件夹、文档或网址。"
             TextWrapping="WrapWholeWords" />
         <ComboBox
             x:Name="RunBox"
@@ -395,11 +395,11 @@
         <TextBlock
             Margin="30,90,0,0"
             HorizontalAlignment="Left"
-            Text="Open:" />
+            Text="打开：" />
         <TextBlock
             Margin="30,135,0,0"
             HorizontalAlignment="Left"
-            Text="Arguments:" />
+            Text="参数：" />
         <Border
             Grid.ColumnSpan="2"
             Height="75"
@@ -425,7 +425,7 @@
                 Style="{StaticResource AccentSplitButtonStyle}">
                 <SplitButton.Flyout>
                     <MenuFlyout>
-                        <MenuFlyoutItem IsEnabled="False" Text="Hover for information">
+                        <MenuFlyoutItem IsEnabled="False" Text="光标悬停查看详情">
                             <MenuFlyoutItem.Icon>
                                 <FontIcon Glyph="" />
                             </MenuFlyoutItem.Icon>
@@ -433,8 +433,8 @@
                         <MenuFlyoutSeparator />
                         <MenuFlyoutItem
                             Click="MenuFlyoutItem_Click_2"
-                            Text="Run as Administrator"
-                            ToolTipService.ToolTip="Run the selected process as administrator. This option will attempt to launch the corresponding Rebound 11 counterpart of the chosen task.">
+                            Text="以管理员身份运行"
+                            ToolTipService.ToolTip="以管理员身份运行该程序。如有对应的 Rebound 11 版本将启动新版。">
                             <MenuFlyoutItem.Icon>
                                 <ImageIcon Source="/Assets/Administrator.ico" />
                             </MenuFlyoutItem.Icon>
@@ -447,8 +447,8 @@
                         </MenuFlyoutItem>
                         <MenuFlyoutItem
                             Click="MenuFlyoutItem_Click_3"
-                            Text="Run as Administrator (Legacy)"
-                            ToolTipService.ToolTip="Rebound 11 replaces run entries of classic Windows applets with Rebound apps. To launch the legacy applets as administrator, use this option instead. (Also launches Task Manager without WinUI 3.)">
+                            Text="以管理员身份运行（原版组件）"
+                            ToolTipService.ToolTip="以管理员身份运行该程序。该选项不会将原版组件替换为 Rebound 11 的版本，并且可以启动非 WinUI 3 版本的任务管理器。">
                             <MenuFlyoutItem.Icon>
                                 <ImageIcon Source="/Assets/Administrator.ico" />
                             </MenuFlyoutItem.Icon>
@@ -458,8 +458,8 @@
                         </MenuFlyoutItem>
                         <MenuFlyoutItem
                             Click="MenuFlyoutItem_Click_1"
-                            Text="Run"
-                            ToolTipService.ToolTip="This option will attempt to launch the corresponding Rebound 11 counterpart of the chosen task.">
+                            Text="运行"
+                            ToolTipService.ToolTip="运行该程序。如有对应的 Rebound 11 版本将启动新版。">
                             <MenuFlyoutItem.Icon>
                                 <FontIcon Glyph="" />
                             </MenuFlyoutItem.Icon>
@@ -469,8 +469,8 @@
                         </MenuFlyoutItem>
                         <MenuFlyoutItem
                             Click="MenuFlyoutItem_Click"
-                            Text="Run Legacy"
-                            ToolTipService.ToolTip="Rebound 11 replaces run entries of classic Windows applets with Rebound apps. To launch the legacy applets, use this option instead. (Also launches Task Manager without WinUI 3.)">
+                            Text="运行（原版组件）"
+                            ToolTipService.ToolTip="运行该程序。该选项不会将原版组件替换为 Rebound 11 的版本，并且可以启动非 WinUI 3 版本的任务管理器。">
                             <MenuFlyoutItem.Icon>
                                 <FontIcon Glyph="" />
                             </MenuFlyoutItem.Icon>
@@ -487,7 +487,7 @@
                 HorizontalAlignment="Stretch"
                 VerticalAlignment="Bottom"
                 Click="Button_Click"
-                Content="Cancel">
+                Content="取消">
                 <Button.KeyboardAccelerators>
                     <KeyboardAccelerator Key="Escape" />
                 </Button.KeyboardAccelerators>
@@ -498,7 +498,7 @@
                 HorizontalAlignment="Stretch"
                 VerticalAlignment="Bottom"
                 Click="Button_Click_1"
-                Content="Browse" />
+                Content="浏览" />
         </Grid>
     </Grid>
 </winuiex:WindowEx>

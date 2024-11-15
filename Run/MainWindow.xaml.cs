@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
@@ -231,7 +231,7 @@ namespace Rebound.Run
                             }
                             catch (Exception)
                             {
-                                await this.ShowMessageDialogAsync($"The system cannot find the file specified.");
+                                await this.ShowMessageDialogAsync($"找不到该文件。");
                             }
                         }
                         else await RunPowershell(RunBox.Text, ArgsBox.Text, admin);
@@ -255,19 +255,19 @@ namespace Rebound.Run
 
                             try
                             {
-                                await this.ShowMessageDialogAsync($"You will have to open this app again to bring back the Windows + R invoke command for Rebound Run.", "Important");
+                                await this.ShowMessageDialogAsync($"您需要重新打开此窗口，才能用 Win+R 快捷键调用 Rebound 运行。", "提示");
                                 var res = Process.Start(startInfo);
                                 Close();
                                 Process.GetCurrentProcess().Kill();
                             }
                             catch (Exception)
                             {
-                                await this.ShowMessageDialogAsync($"The system cannot find the file specified.");
+                                await this.ShowMessageDialogAsync($"找不到该文件。");
                             }
                         }
                         else
                         {
-                            await this.ShowMessageDialogAsync($"The WinUI 3 run box is already opened.", "Error");
+                            await this.ShowMessageDialogAsync($"新版运行对话框已打开。", "错误");
                             return;
                         }
                         Close();
@@ -343,7 +343,7 @@ namespace Rebound.Run
             }
             catch (Exception)
             {
-                await this.ShowMessageDialogAsync("The system cannot find the file specified or the command line arguments are invalid.", "Error");
+                await this.ShowMessageDialogAsync("找不到该文件，或者命令行参数有误。", "错误");
             }
         }
 
@@ -427,7 +427,7 @@ namespace Rebound.Run
         private void CloseRunBox()
         {
             // Find the window with the title "Run"
-            IntPtr hWnd = Win32Helper.FindWindow(null, "Run");
+            IntPtr hWnd = Win32Helper.FindWindow(null, "运行");
             //IntPtr hWndtaskmgr2 = Win32Helper.FindWindow("#32770", "Create new task");
 
             if (hWnd != IntPtr.Zero)
@@ -440,7 +440,7 @@ namespace Rebound.Run
                     try
                     {
                         (App.MainWindow as MainWindow)?.BringToFront();
-                        App.MainWindow.Title ??= "Rebound Run";
+                        App.MainWindow.Title ??= "Rebound 运行";
                         return;
                     }
                     catch
@@ -590,7 +590,7 @@ namespace Rebound.Run
             // Set options for your file picker
             openPicker.ViewMode = PickerViewMode.Thumbnail;
             openPicker.SuggestedStartLocation = PickerLocationId.Desktop;
-            openPicker.CommitButtonText = "Select file to run";
+            openPicker.CommitButtonText = "请选择要运行的文件";
             openPicker.FileTypeFilter.Add(".exe");
             openPicker.FileTypeFilter.Add(".pif");
             openPicker.FileTypeFilter.Add(".com");
@@ -631,9 +631,9 @@ namespace Rebound.Run
 
         public void CheckForRunBox()
         {
-            IntPtr hWnd = Win32Helper.FindWindow(null, "Run");
-            IntPtr taskManagerHandle = Win32Helper.FindWindow(null, "Task Manager");
-            IntPtr hWndtaskmgr = Win32Helper.FindWindowEx(taskManagerHandle, IntPtr.Zero, null, "Create new task");
+            IntPtr hWnd = Win32Helper.FindWindow(null, "运行");
+            IntPtr taskManagerHandle = Win32Helper.FindWindow(null, "任务管理器");
+            IntPtr hWndtaskmgr = Win32Helper.FindWindowEx(taskManagerHandle, IntPtr.Zero, null, "新建任务");
             if (hWnd == IntPtr.Zero)
             {
                 App.AllowClosingRunBox = true;

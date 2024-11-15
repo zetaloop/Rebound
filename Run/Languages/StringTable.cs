@@ -49,6 +49,17 @@ namespace Rebound.Run.Languages
                 Cancel = "Abbrechen";
                 Browse = "Druchsuchen";
             }
+            if (currentCulture.Name.ToLower() == "zh-cn")
+            {
+                AppTitle = "Rebound 运行";
+                Run = "运行";
+                RunAsAdmin = "以管理员身份运行";
+                Description = "请输入要打开的程序、文件夹、文档或网址。";
+                Open = "打开";
+                Arguments = "参数";
+                Cancel = "取消";
+                Browse = "浏览";
+            }
         }
     }
 }
